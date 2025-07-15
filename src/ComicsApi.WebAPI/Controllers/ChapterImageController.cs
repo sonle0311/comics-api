@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
+using ComicsApi.Application.Common;
 using ComicsApi.Application.DTOs;
 using ComicsApi.Domain.Interfaces;
 using Microsoft.AspNetCore.Mvc;
@@ -36,12 +37,15 @@ namespace ComicsApi.WebAPI.Controllers
             {
                 var images = await _chapterImageRepository.GetByChapterIdAsync(chapterId);
                 var imageDtos = _mapper.Map<List<ChapterImageDto>>(images);
-                return Ok(imageDtos);
+                
+                var response = ApiResponse<List<ChapterImageDto>>.SuccessResult(imageDtos, "Lấy danh sách hình ảnh chapter thành công");
+                return Ok(response);
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Lỗi khi lấy danh sách hình ảnh của chapter {ChapterId}", chapterId);
-                return StatusCode(500, "Đã xảy ra lỗi khi xử lý yêu cầu");
+                var errorResponse = ApiResponse<object>.ErrorResult("Đã xảy ra lỗi khi xử lý yêu cầu", ex.Message);
+                return StatusCode(500, errorResponse);
             }
         }
 
@@ -60,16 +64,19 @@ namespace ComicsApi.WebAPI.Controllers
                 
                 if (image == null)
                 {
-                    return NotFound($"Không tìm thấy hình ảnh trang {page} của chapter {chapterId}");
+                    var notFoundResponse = ApiResponse<object>.ErrorResult($"Không tìm thấy hình ảnh trang {page} của chapter {chapterId}");
+                    return NotFound(notFoundResponse);
                 }
                 
                 var imageDto = _mapper.Map<ChapterImageDto>(image);
-                return Ok(imageDto);
+                var response = ApiResponse<ChapterImageDto>.SuccessResult(imageDto, "Lấy hình ảnh chapter thành công");
+                return Ok(response);
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Lỗi khi lấy hình ảnh trang {Page} của chapter {ChapterId}", page, chapterId);
-                return StatusCode(500, "Đã xảy ra lỗi khi xử lý yêu cầu");
+                var errorResponse = ApiResponse<object>.ErrorResult("Đã xảy ra lỗi khi xử lý yêu cầu", ex.Message);
+                return StatusCode(500, errorResponse);
             }
         }
     }

@@ -1,5 +1,6 @@
 using System;
 using System.Threading.Tasks;
+using ComicsApi.Application.Common;
 using ComicsApi.Application.Features.Chapters.Queries.GetChapterDetail;
 using ComicsApi.Application.Features.Chapters.Queries.GetChaptersByMangaId;
 using MediatR;
@@ -33,12 +34,21 @@ namespace ComicsApi.WebAPI.Controllers
             {
                 var query = new GetChaptersByMangaIdQuery(mangaId);
                 var result = await _mediator.Send(query);
-                return Ok(result);
+                
+                if (result == null)
+                {
+                    var notFoundResponse = ApiResponse<object>.ErrorResult($"Không tìm thấy chapter nào cho manga {mangaId}");
+                    return NotFound(notFoundResponse);
+                }
+                
+                var response = ApiResponse<object>.SuccessResult(result, "Lấy danh sách chapter thành công");
+                return Ok(response);
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Lỗi khi lấy danh sách chapter của manga {MangaId}", mangaId);
-                return StatusCode(500, "Đã xảy ra lỗi khi xử lý yêu cầu");
+                var errorResponse = ApiResponse<object>.ErrorResult("Đã xảy ra lỗi khi xử lý yêu cầu", ex.Message);
+                return StatusCode(500, errorResponse);
             }
         }
 
@@ -58,15 +68,18 @@ namespace ComicsApi.WebAPI.Controllers
                 
                 if (result == null)
                 {
-                    return NotFound($"Không tìm thấy chapter {chapterName} của manga {mangaId}");
+                    var notFoundResponse = ApiResponse<object>.ErrorResult($"Không tìm thấy chapter {chapterName} của manga {mangaId}");
+                    return NotFound(notFoundResponse);
                 }
                 
-                return Ok(result);
+                var response = ApiResponse<object>.SuccessResult(result, "Lấy chi tiết chapter thành công");
+                return Ok(response);
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Lỗi khi lấy chi tiết chapter {ChapterName} của manga {MangaId}", chapterName, mangaId);
-                return StatusCode(500, "Đã xảy ra lỗi khi xử lý yêu cầu");
+                var errorResponse = ApiResponse<object>.ErrorResult("Đã xảy ra lỗi khi xử lý yêu cầu", ex.Message);
+                return StatusCode(500, errorResponse);
             }
         }
     }

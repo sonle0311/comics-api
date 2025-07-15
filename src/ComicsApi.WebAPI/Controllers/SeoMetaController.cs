@@ -1,5 +1,6 @@
 using System;
 using System.Threading.Tasks;
+using ComicsApi.Application.Common;
 using ComicsApi.Domain.Entities;
 using ComicsApi.Domain.Interfaces;
 using Microsoft.AspNetCore.Mvc;
@@ -34,15 +35,18 @@ namespace ComicsApi.WebAPI.Controllers
                 
                 if (seoMeta == null)
                 {
-                    return NotFound($"Không tìm thấy thông tin SEO với id: {id}");
+                    var notFoundResponse = ApiResponse<object>.ErrorResult($"Không tìm thấy thông tin SEO với id: {id}");
+                    return NotFound(notFoundResponse);
                 }
                 
-                return Ok(seoMeta);
+                var response = ApiResponse<SeoMeta>.SuccessResult(seoMeta, "Lấy thông tin SEO thành công");
+                return Ok(response);
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Lỗi khi lấy thông tin SEO theo id {Id}", id);
-                return StatusCode(500, "Đã xảy ra lỗi khi xử lý yêu cầu");
+                var errorResponse = ApiResponse<object>.ErrorResult("Đã xảy ra lỗi khi xử lý yêu cầu", ex.Message);
+                return StatusCode(500, errorResponse);
             }
         }
     }

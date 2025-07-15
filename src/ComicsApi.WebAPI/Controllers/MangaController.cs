@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using ComicsApi.Application.Common;
 using ComicsApi.Application.Features.Mangas.Queries.GetMangaList;
 using ComicsApi.Application.Features.Mangas.Queries.GetMangasByCategory;
 using ComicsApi.Application.Features.Chapters.Queries.GetChaptersByMangaId;
@@ -37,12 +38,17 @@ namespace ComicsApi.WebAPI.Controllers
             {
                 var query = new GetMangaListQuery(page, pageSize);
                 var result = await _mediator.Send(query);
-                return Ok(result);
+                
+                // TODO: Cần cập nhật GetMangaListQuery để trả về thông tin phân trang
+                // Tạm thời sử dụng response không có pagination
+                var response = ApiResponse<object>.SuccessResult(result, "Lấy danh sách manga thành công");
+                return Ok(response);
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Lỗi khi lấy danh sách manga");
-                return StatusCode(500, "Đã xảy ra lỗi khi xử lý yêu cầu");
+                var errorResponse = ApiResponse<object>.ErrorResult("Đã xảy ra lỗi khi xử lý yêu cầu", ex.Message);
+                return StatusCode(500, errorResponse);
             }
         }
 
@@ -60,12 +66,16 @@ namespace ComicsApi.WebAPI.Controllers
             {
                 var query = new GetMangasByCategoryQuery(categorySlug, page, pageSize);
                 var result = await _mediator.Send(query);
-                return Ok(result);
+                
+                // TODO: Cần cập nhật GetMangasByCategoryQuery để trả về thông tin phân trang
+                var response = ApiResponse<object>.SuccessResult(result, $"Lấy danh sách manga theo danh mục {categorySlug} thành công");
+                return Ok(response);
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Lỗi khi lấy danh sách manga theo danh mục {CategorySlug}", categorySlug);
-                return StatusCode(500, "Đã xảy ra lỗi khi xử lý yêu cầu");
+                var errorResponse = ApiResponse<object>.ErrorResult("Đã xảy ra lỗi khi xử lý yêu cầu", ex.Message);
+                return StatusCode(500, errorResponse);
             }
         }
 

@@ -1,5 +1,6 @@
 using System;
 using System.Threading.Tasks;
+using ComicsApi.Application.Common;
 using ComicsApi.Application.Features.Crawler.Commands;
 using ComicsApi.Application.Features.Crawler.Commands.RunCrawler;
 using MediatR;
@@ -38,17 +39,20 @@ namespace ComicsApi.WebAPI.Controllers
 
                 if (result)
                 {
-                    return Ok(new { Success = true, Message = "Crawl dữ liệu thành công" });
+                    var response = ApiResponse<object>.SuccessResult(null, "Crawl dữ liệu thành công");
+                    return Ok(response);
                 }
                 else
                 {
-                    return BadRequest(new { Success = false, Message = "Crawl dữ liệu thất bại" });
+                    var errorResponse = ApiResponse<object>.ErrorResult("Crawl dữ liệu thất bại");
+                    return BadRequest(errorResponse);
                 }
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Lỗi khi chạy crawler");
-                return StatusCode(500, new { Success = false, Message = "Đã xảy ra lỗi khi xử lý yêu cầu" });
+                var errorResponse = ApiResponse<object>.ErrorResult("Đã xảy ra lỗi khi xử lý yêu cầu", ex.Message);
+                return StatusCode(500, errorResponse);
             }
         }
     }

@@ -1,5 +1,6 @@
 using System;
 using System.Threading.Tasks;
+using ComicsApi.Application.Common;
 using ComicsApi.Domain.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -30,12 +31,14 @@ namespace ComicsApi.WebAPI.Controllers
             try
             {
                 var logs = await _crawlLogRepository.GetLatestLogsAsync(count);
-                return Ok(logs);
+                var response = ApiResponse<object>.SuccessResult(logs, "Lấy lịch sử crawl mới nhất thành công");
+                return Ok(response);
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Lỗi khi lấy lịch sử crawl mới nhất");
-                return StatusCode(500, "Đã xảy ra lỗi khi xử lý yêu cầu");
+                var errorResponse = ApiResponse<object>.ErrorResult("Đã xảy ra lỗi khi xử lý yêu cầu", ex.Message);
+                return StatusCode(500, errorResponse);
             }
         }
 
@@ -53,15 +56,18 @@ namespace ComicsApi.WebAPI.Controllers
                 
                 if (log == null)
                 {
-                    return NotFound($"Không tìm thấy lịch sử crawl cho manga: {mangaSlug}");
+                    var notFoundResponse = ApiResponse<object>.ErrorResult($"Không tìm thấy lịch sử crawl cho manga: {mangaSlug}");
+                    return NotFound(notFoundResponse);
                 }
                 
-                return Ok(log);
+                var response = ApiResponse<object>.SuccessResult(log, "Lấy lịch sử crawl theo manga thành công");
+                return Ok(response);
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Lỗi khi lấy lịch sử crawl theo manga slug {MangaSlug}", mangaSlug);
-                return StatusCode(500, "Đã xảy ra lỗi khi xử lý yêu cầu");
+                var errorResponse = ApiResponse<object>.ErrorResult("Đã xảy ra lỗi khi xử lý yêu cầu", ex.Message);
+                return StatusCode(500, errorResponse);
             }
         }
     }

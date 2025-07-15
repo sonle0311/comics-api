@@ -1,5 +1,6 @@
 using System;
 using System.Threading.Tasks;
+using ComicsApi.Application.Common;
 using ComicsApi.Application.Features.Categories.Queries.GetAllCategories;
 using ComicsApi.Application.Features.Categories.Queries.GetCategoryBySlug;
 using MediatR;
@@ -32,12 +33,14 @@ namespace ComicsApi.WebAPI.Controllers
             {
                 var query = new GetAllCategoriesQuery();
                 var result = await _mediator.Send(query);
-                return Ok(result);
+                var response = ApiResponse<object>.SuccessResult(result, "Lấy danh sách danh mục thành công");
+                return Ok(response);
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Lỗi khi lấy tất cả danh mục");
-                return StatusCode(500, "Đã xảy ra lỗi khi xử lý yêu cầu");
+                var errorResponse = ApiResponse<object>.ErrorResult("Đã xảy ra lỗi khi xử lý yêu cầu", ex.Message);
+                return StatusCode(500, errorResponse);
             }
         }
 
@@ -56,15 +59,18 @@ namespace ComicsApi.WebAPI.Controllers
 
                 if (result == null)
                 {
-                    return NotFound($"Không tìm thấy danh mục với slug: {slug}");
+                    var notFoundResponse = ApiResponse<object>.ErrorResult($"Không tìm thấy danh mục với slug: {slug}");
+                    return NotFound(notFoundResponse);
                 }
 
-                return Ok(result);
+                var response = ApiResponse<object>.SuccessResult(result, "Lấy thông tin danh mục thành công");
+                return Ok(response);
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Lỗi khi lấy danh mục theo slug {Slug}", slug);
-                return StatusCode(500, "Đã xảy ra lỗi khi xử lý yêu cầu");
+                var errorResponse = ApiResponse<object>.ErrorResult("Đã xảy ra lỗi khi xử lý yêu cầu", ex.Message);
+                return StatusCode(500, errorResponse);
             }
         }
     }
