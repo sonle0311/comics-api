@@ -1,0 +1,2431 @@
+Dưới đây là bản **tài liệu tổng hợp (docs)** mô tả cấu trúc **API response của Otruyen** dựa trên các file JSON bạn cung cấp và mẫu thực tế từ hệ thống Otruyen API:
+
+---
+
+# 📘 Otruyen API – Response Documentation
+
+---
+
+## ✅ 1. Thể loại truyện (Categories)
+
+**Endpoint**: `GET https://otruyenapi.com/v1/api/the-loai`
+
+**Response:**
+
+```json
+{
+  "status": "success",
+  "message": "",
+  "data": {
+    "items": [
+      {
+        "_id": "6508654905d5791ad671a491",
+        "slug": "action",
+        "name": "Action"
+      },
+      {
+        "_id": "6508654905d5791ad671a4a3",
+        "slug": "adult",
+        "name": "Adult"
+      },
+      {
+        "_id": "6508654905d5791ad671a4a6",
+        "slug": "adventure",
+        "name": "Adventure"
+      },
+      {
+        "_id": "6508654905d5791ad671a4a9",
+        "slug": "anime",
+        "name": "Anime"
+      },
+      {
+        "_id": "6508654905d5791ad671a4ac",
+        "slug": "chuyen-sinh",
+        "name": "Chuyển Sinh"
+      },
+      {
+        "_id": "6508654905d5791ad671a4af",
+        "slug": "comedy",
+        "name": "Comedy"
+      },
+      {
+        "_id": "6508654905d5791ad671a4b2",
+        "slug": "comic",
+        "name": "Comic"
+      },
+      {
+        "_id": "6508654905d5791ad671a4b5",
+        "slug": "cooking",
+        "name": "Cooking"
+      },
+      {
+        "_id": "6508654905d5791ad671a4b8",
+        "slug": "co-dai",
+        "name": "Cổ Đại"
+      },
+      {
+        "_id": "6508654905d5791ad671a4bb",
+        "slug": "doujinshi",
+        "name": "Doujinshi"
+      },
+      {
+        "_id": "6508654905d5791ad671a4be",
+        "slug": "drama",
+        "name": "Drama"
+      },
+      {
+        "_id": "6508654905d5791ad671a4c1",
+        "slug": "dam-my",
+        "name": "Đam Mỹ"
+      },
+      {
+        "_id": "6508654905d5791ad671a4c4",
+        "slug": "ecchi",
+        "name": "Ecchi"
+      },
+      {
+        "_id": "6508654905d5791ad671a4c7",
+        "slug": "fantasy",
+        "name": "Fantasy"
+      },
+      {
+        "_id": "6508654905d5791ad671a4ca",
+        "slug": "gender-bender",
+        "name": "Gender Bender"
+      },
+      {
+        "_id": "6508654905d5791ad671a4cc",
+        "slug": "harem",
+        "name": "Harem"
+      },
+      {
+        "_id": "6508654905d5791ad671a4ce",
+        "slug": "historical",
+        "name": "Historical"
+      },
+      {
+        "_id": "6508654905d5791ad671a4d0",
+        "slug": "horror",
+        "name": "Horror"
+      },
+      {
+        "_id": "6508654905d5791ad671a4d2",
+        "slug": "josei",
+        "name": "Josei"
+      },
+      {
+        "_id": "6508654905d5791ad671a4d4",
+        "slug": "live-action",
+        "name": "Live action"
+      },
+      {
+        "_id": "6508654905d5791ad671a4d6",
+        "slug": "manga",
+        "name": "Manga"
+      },
+      {
+        "_id": "6508654905d5791ad671a4d8",
+        "slug": "manhua",
+        "name": "Manhua"
+      },
+      {
+        "_id": "6508654905d5791ad671a4da",
+        "slug": "manhwa",
+        "name": "Manhwa"
+      },
+      {
+        "_id": "6508654905d5791ad671a4dc",
+        "slug": "martial-arts",
+        "name": "Martial Arts"
+      },
+      {
+        "_id": "6508654905d5791ad671a4de",
+        "slug": "mature",
+        "name": "Mature"
+      },
+      {
+        "_id": "6508654905d5791ad671a4e0",
+        "slug": "mecha",
+        "name": "Mecha"
+      },
+      {
+        "_id": "6508654905d5791ad671a4e2",
+        "slug": "mystery",
+        "name": "Mystery"
+      },
+      {
+        "_id": "6508654905d5791ad671a4e4",
+        "slug": "ngon-tinh",
+        "name": "Ngôn Tình"
+      },
+      {
+        "_id": "6508654905d5791ad671a4e6",
+        "slug": "one-shot",
+        "name": "One shot"
+      },
+      {
+        "_id": "6508654905d5791ad671a4e8",
+        "slug": "psychological",
+        "name": "Psychological"
+      },
+      {
+        "_id": "6508654905d5791ad671a4ea",
+        "slug": "romance",
+        "name": "Romance"
+      },
+      {
+        "_id": "6508654905d5791ad671a4ec",
+        "slug": "school-life",
+        "name": "School Life"
+      },
+      {
+        "_id": "6508654905d5791ad671a4ee",
+        "slug": "sci-fi",
+        "name": "Sci-fi"
+      },
+      {
+        "_id": "6508654905d5791ad671a4f0",
+        "slug": "seinen",
+        "name": "Seinen"
+      },
+      {
+        "_id": "6508654905d5791ad671a4f2",
+        "slug": "shoujo",
+        "name": "Shoujo"
+      },
+      {
+        "_id": "6508654905d5791ad671a4f4",
+        "slug": "shoujo-ai",
+        "name": "Shoujo Ai"
+      },
+      {
+        "_id": "6508654905d5791ad671a4f6",
+        "slug": "shounen",
+        "name": "Shounen"
+      },
+      {
+        "_id": "6508654905d5791ad671a4f8",
+        "slug": "shounen-ai",
+        "name": "Shounen Ai"
+      },
+      {
+        "_id": "6508654a05d5791ad671a4fa",
+        "slug": "slice-of-life",
+        "name": "Slice of Life"
+      },
+      {
+        "_id": "6508654a05d5791ad671a4fc",
+        "slug": "smut",
+        "name": "Smut"
+      },
+      {
+        "_id": "6508654a05d5791ad671a4fe",
+        "slug": "soft-yaoi",
+        "name": "Soft Yaoi"
+      },
+      {
+        "_id": "6508654a05d5791ad671a500",
+        "slug": "soft-yuri",
+        "name": "Soft Yuri"
+      },
+      {
+        "_id": "6508654a05d5791ad671a502",
+        "slug": "sports",
+        "name": "Sports"
+      },
+      {
+        "_id": "6508654a05d5791ad671a504",
+        "slug": "supernatural",
+        "name": "Supernatural"
+      },
+      {
+        "_id": "6508654a05d5791ad671a506",
+        "slug": "tap-chi-truyen-tranh",
+        "name": "Tạp chí truyện tranh"
+      },
+      {
+        "_id": "6508654a05d5791ad671a508",
+        "slug": "thieu-nhi",
+        "name": "Thiếu Nhi"
+      },
+      {
+        "_id": "6508654a05d5791ad671a50a",
+        "slug": "tragedy",
+        "name": "Tragedy"
+      },
+      {
+        "_id": "6508654a05d5791ad671a50c",
+        "slug": "trinh-tham",
+        "name": "Trinh Thám"
+      },
+      {
+        "_id": "6508654a05d5791ad671a50e",
+        "slug": "truyen-scan",
+        "name": "Truyện scan"
+      },
+      {
+        "_id": "6508654a05d5791ad671a510",
+        "slug": "truyen-mau",
+        "name": "Truyện Màu"
+      },
+      {
+        "_id": "6508654a05d5791ad671a512",
+        "slug": "viet-nam",
+        "name": "Việt Nam"
+      },
+      {
+        "_id": "6508654a05d5791ad671a514",
+        "slug": "webtoon",
+        "name": "Webtoon"
+      },
+      {
+        "_id": "6508654a05d5791ad671a516",
+        "slug": "xuyen-khong",
+        "name": "Xuyên Không"
+      },
+      {
+        "_id": "6508654a05d5791ad671a518",
+        "slug": "16",
+        "name": "16+"
+      }
+    ]
+  }
+}
+```
+
+---
+
+## ✅ 2. Danh sách truyện theo thể loại (Pagination)
+
+**Endpoint**:
+`GET https://otruyenapi.com/v1/api/the-loai/{slug}?page={n}`
+**Ví dụ**: `/v1/api/the-loai/co-dai?page=1`
+
+**Response (rút gọn):**
+
+```json
+{
+  "status": "success",
+  "message": "",
+  "data": {
+    "seoOnPage": {
+      "og_type": "website",
+      "titleHead": "Cổ Đại",
+      "og_image": [
+        "/uploads/comics/nhat-nguyet-dong-thac-thumb.jpg",
+        "/uploads/comics/xuyen-ve-thoi-nguyen-thuy-ta-tro-thanh-ba-chu-mot-phuong-thumb.jpg",
+        "/uploads/comics/vinh-kiep-vo-gian-tien-tran-kiep-thumb.jpg",
+        "/uploads/comics/giam-cam-thumb.jpg",
+        "/uploads/comics/hoang-de-dien-cuong-om-lay-toi-thumb.jpg",
+        "/uploads/comics/tro-thanh-hau-nu-con-quan-trong-hon-la-lam-cong-chua-thumb.jpg",
+        "/uploads/comics/trang-phuc-cua-julieta-thumb.jpg",
+        "/uploads/comics/bon-thanh-nu-nga-bai-roi-thumb.jpg",
+        "/uploads/comics/xin-dung-tuy-tien-to-ra-tu-te-thumb.jpg",
+        "/uploads/comics/ke-cuong-buc-yeu-quy-cua-toi-thumb.jpg",
+        "/uploads/comics/hom-nay-sat-thu-chi-muon-lam-ca-muoi-thumb.jpg",
+        "/uploads/comics/ho-ly-cao-gia-va-bach-lien-hoa-cao-lanh-ai-se-lo-tay-truoc-day-thumb.jpg",
+        "/uploads/comics/vi-phu-quan-cam-ghet-toi-da-mat-tri-nho-thumb.jpg",
+        "/uploads/comics/giet-chet-niem-an-ui-duy-nhat-cua-ta-thumb.jpg",
+        "/uploads/comics/ta-co-tram-trieu-nam-tu-vi-thumb.jpg",
+        "/uploads/comics/bi-an-mon-ta-phai-dua-vao-do-de-de-keo-dai-tinh-mang-thumb.jpg",
+        "/uploads/comics/bach-trach-chi-danh-thumb.jpg",
+        "/uploads/comics/xuyen-ve-co-dai-lam-nu-phu-vo-dung-thumb.jpg",
+        "/uploads/comics/nguoi-thua-ke-cua-quy-thumb.jpg",
+        "/uploads/comics/toi-tro-thanh-me-ke-cua-gia-dinh-hac-am-thumb.jpg",
+        "/uploads/comics/phu-quan-ta-nuoi-tu-be-muon-thu-tieu-ta-thumb.jpg",
+        "/uploads/comics/than-y-hoang-hau-thumb.jpg",
+        "/uploads/comics/phuong-hoang-quy-hoi-thumb.jpg",
+        "/uploads/comics/nuong-nuong-moi-ngay-deu-tron-thi-tam-thumb.jpg"
+      ],
+      "og_url": "the-loai/co-dai"
+    },
+    "breadCrumb": [
+      {
+        "name": "Cổ Đại",
+        "slug": "/the-loai/co-dai",
+        "isCurrent": false,
+        "position": 2
+      },
+      {
+        "name": "Trang 1",
+        "isCurrent": true,
+        "position": 3
+      }
+    ],
+    "titlePage": "Cổ Đại",
+    "items": [
+      {
+        "_id": "6629d83166b83f071120855e",
+        "name": "Nhật Nguyệt Đồng Thác",
+        "slug": "nhat-nguyet-dong-thac",
+        "origin_name": [
+          ""
+        ],
+        "status": "ongoing",
+        "thumb_url": "nhat-nguyet-dong-thac-thumb.jpg",
+        "sub_docquyen": false,
+        "category": [
+          {
+            "id": "6508654905d5791ad671a491",
+            "name": "Action",
+            "slug": "action"
+          },
+          {
+            "id": "6508654905d5791ad671a4b8",
+            "name": "Cổ Đại",
+            "slug": "co-dai"
+          },
+          {
+            "id": "6508654905d5791ad671a4d0",
+            "name": "Horror",
+            "slug": "horror"
+          },
+          {
+            "id": "6508654905d5791ad671a4d8",
+            "name": "Manhua",
+            "slug": "manhua"
+          },
+          {
+            "id": "6508654905d5791ad671a4e2",
+            "name": "Mystery",
+            "slug": "mystery"
+          },
+          {
+            "id": "6508654a05d5791ad671a510",
+            "name": "Truyện Màu",
+            "slug": "truyen-mau"
+          }
+        ],
+        "updatedAt": "2025-07-07T05:49:14.022Z",
+        "chaptersLatest": [
+          {
+            "filename": "Nhật Nguyệt Đồng Thác [Chap 281-282]",
+            "chapter_name": "282",
+            "chapter_title": "",
+            "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/686a0222c705a578a7ff581c"
+          }
+        ]
+      },
+      {
+        "_id": "661b89bcfad3f557c413ca7f",
+        "name": "Xuyên Về Thời Nguyên Thuỷ, Ta Trở Thành Bá Chủ Một Phương",
+        "slug": "xuyen-ve-thoi-nguyen-thuy-ta-tro-thanh-ba-chu-mot-phuong",
+        "origin_name": [
+          "Xuyên Về Thời Nguyên Thuỷ",
+          "Ta Trở Thành Bá Chủ Một Phương!"
+        ],
+        "status": "ongoing",
+        "thumb_url": "xuyen-ve-thoi-nguyen-thuy-ta-tro-thanh-ba-chu-mot-phuong-thumb.jpg",
+        "sub_docquyen": false,
+        "category": [
+          {
+            "id": "6508654905d5791ad671a4b8",
+            "name": "Cổ Đại",
+            "slug": "co-dai"
+          },
+          {
+            "id": "6508654905d5791ad671a4da",
+            "name": "Manhwa",
+            "slug": "manhwa"
+          },
+          {
+            "id": "6508654a05d5791ad671a510",
+            "name": "Truyện Màu",
+            "slug": "truyen-mau"
+          },
+          {
+            "id": "6508654a05d5791ad671a516",
+            "name": "Xuyên Không",
+            "slug": "xuyen-khong"
+          }
+        ],
+        "updatedAt": "2024-05-17T20:43:59.377Z",
+        "chaptersLatest": [
+          {
+            "filename": "Xuyên Về Thời Nguyên Thuỷ Ta Trở Thành Bá Chủ Một Phương [Chap 1-57]",
+            "chapter_name": "57",
+            "chapter_title": "",
+            "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/6647bb2aa83372074673052c"
+          }
+        ]
+      },
+      {
+        "_id": "65fe80d366b83f0711116c2c",
+        "name": "Vĩnh Kiếp Vô Gián - Tiền Trần Kiếp",
+        "slug": "vinh-kiep-vo-gian-tien-tran-kiep",
+        "origin_name": [
+          "Naraka: Bladepoint Manhua"
+        ],
+        "status": "ongoing",
+        "thumb_url": "vinh-kiep-vo-gian-tien-tran-kiep-thumb.jpg",
+        "sub_docquyen": false,
+        "category": [
+          {
+            "id": "6508654905d5791ad671a491",
+            "name": "Action",
+            "slug": "action"
+          },
+          {
+            "id": "6508654905d5791ad671a4a6",
+            "name": "Adventure",
+            "slug": "adventure"
+          },
+          {
+            "id": "6508654905d5791ad671a4b8",
+            "name": "Cổ Đại",
+            "slug": "co-dai"
+          },
+          {
+            "id": "6508654905d5791ad671a4be",
+            "name": "Drama",
+            "slug": "drama"
+          },
+          {
+            "id": "6508654905d5791ad671a4c7",
+            "name": "Fantasy",
+            "slug": "fantasy"
+          },
+          {
+            "id": "6508654905d5791ad671a4d8",
+            "name": "Manhua",
+            "slug": "manhua"
+          },
+          {
+            "id": "6508654a05d5791ad671a504",
+            "name": "Supernatural",
+            "slug": "supernatural"
+          },
+          {
+            "id": "6508654a05d5791ad671a510",
+            "name": "Truyện Màu",
+            "slug": "truyen-mau"
+          }
+        ],
+        "updatedAt": "2024-03-23T07:39:34.217Z",
+        "chaptersLatest": [
+          {
+            "filename": "Vĩnh Kiếp Vô Gián - Tiền Trần Kiếp [Chap 1-2]",
+            "chapter_name": "2",
+            "chapter_title": "",
+            "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/65fe8078164c256eada8b254"
+          }
+        ]
+      },
+      {
+        "_id": "65f3f87bfad3f557c405546c",
+        "name": "Giam Cầm",
+        "slug": "giam-cam",
+        "origin_name": [
+          ""
+        ],
+        "status": "ongoing",
+        "thumb_url": "giam-cam-thumb.jpg",
+        "sub_docquyen": false,
+        "category": [
+          {
+            "id": "6508654905d5791ad671a4b8",
+            "name": "Cổ Đại",
+            "slug": "co-dai"
+          },
+          {
+            "id": "6508654905d5791ad671a4af",
+            "name": "Comedy",
+            "slug": "comedy"
+          },
+          {
+            "id": "6508654905d5791ad671a4be",
+            "name": "Drama",
+            "slug": "drama"
+          },
+          {
+            "id": "6508654905d5791ad671a4da",
+            "name": "Manhwa",
+            "slug": "manhwa"
+          },
+          {
+            "id": "6508654905d5791ad671a4e4",
+            "name": "Ngôn Tình",
+            "slug": "ngon-tinh"
+          },
+          {
+            "id": "6508654a05d5791ad671a510",
+            "name": "Truyện Màu",
+            "slug": "truyen-mau"
+          }
+        ],
+        "updatedAt": "2024-11-08T03:38:46.466Z",
+        "chaptersLatest": [
+          {
+            "filename": "Giam Cầm [Chap 76-77]",
+            "chapter_name": "77",
+            "chapter_title": "",
+            "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/672d824dc705a578a7f867fe"
+          }
+        ]
+      },
+      {
+        "_id": "65f28d5e66b83f07110cc36a",
+        "name": "Hoàng Đế Điên Cuồng Ôm Lấy Tôi",
+        "slug": "hoang-de-dien-cuong-om-lay-toi",
+        "origin_name": [
+          ""
+        ],
+        "status": "ongoing",
+        "thumb_url": "hoang-de-dien-cuong-om-lay-toi-thumb.jpg",
+        "sub_docquyen": false,
+        "category": [
+          {
+            "id": "6508654905d5791ad671a4b8",
+            "name": "Cổ Đại",
+            "slug": "co-dai"
+          },
+          {
+            "id": "6508654905d5791ad671a4be",
+            "name": "Drama",
+            "slug": "drama"
+          },
+          {
+            "id": "6508654905d5791ad671a4da",
+            "name": "Manhwa",
+            "slug": "manhwa"
+          },
+          {
+            "id": "6508654905d5791ad671a4e4",
+            "name": "Ngôn Tình",
+            "slug": "ngon-tinh"
+          },
+          {
+            "id": "6508654905d5791ad671a4ea",
+            "name": "Romance",
+            "slug": "romance"
+          },
+          {
+            "id": "6508654a05d5791ad671a510",
+            "name": "Truyện Màu",
+            "slug": "truyen-mau"
+          }
+        ],
+        "updatedAt": "2025-01-21T07:52:54.407Z",
+        "chaptersLatest": [
+          {
+            "filename": "Hoàng Đế Điên Cuồng Ôm Lấy Tôi [Chap 46]",
+            "chapter_name": "46",
+            "chapter_title": "",
+            "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/678f505fc926626890a6c1a3"
+          }
+        ]
+      },
+      {
+        "_id": "65f1608366b83f07110c2cfb",
+        "name": "Trở Thành Hầu Nữ Còn Quan Trọng Hơn Là Làm Công Chúa",
+        "slug": "tro-thanh-hau-nu-con-quan-trong-hon-la-lam-cong-chua",
+        "origin_name": [
+          ""
+        ],
+        "status": "ongoing",
+        "thumb_url": "tro-thanh-hau-nu-con-quan-trong-hon-la-lam-cong-chua-thumb.jpg",
+        "sub_docquyen": false,
+        "category": [
+          {
+            "id": "6508654905d5791ad671a4b8",
+            "name": "Cổ Đại",
+            "slug": "co-dai"
+          },
+          {
+            "id": "6508654905d5791ad671a4da",
+            "name": "Manhwa",
+            "slug": "manhwa"
+          },
+          {
+            "id": "6508654905d5791ad671a4e4",
+            "name": "Ngôn Tình",
+            "slug": "ngon-tinh"
+          },
+          {
+            "id": "6508654a05d5791ad671a510",
+            "name": "Truyện Màu",
+            "slug": "truyen-mau"
+          }
+        ],
+        "updatedAt": "2025-06-27T02:49:27.075Z",
+        "chaptersLatest": [
+          {
+            "filename": "Trở Thành Hầu Nữ Còn Quan Trọng Hơn Là Làm Công Chúa [Chap 24-32]",
+            "chapter_name": "32",
+            "chapter_title": "",
+            "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/685e02f1c926626890aae002"
+          }
+        ]
+      },
+      {
+        "_id": "65ee992afad3f557c4028af7",
+        "name": "Trang Phục Của Julieta",
+        "slug": "trang-phuc-cua-julieta",
+        "origin_name": [
+          ""
+        ],
+        "status": "ongoing",
+        "thumb_url": "trang-phuc-cua-julieta-thumb.jpg",
+        "sub_docquyen": false,
+        "category": [
+          {
+            "id": "6508654905d5791ad671a4b8",
+            "name": "Cổ Đại",
+            "slug": "co-dai"
+          },
+          {
+            "id": "6508654905d5791ad671a4da",
+            "name": "Manhwa",
+            "slug": "manhwa"
+          },
+          {
+            "id": "6508654905d5791ad671a4e4",
+            "name": "Ngôn Tình",
+            "slug": "ngon-tinh"
+          },
+          {
+            "id": "6508654a05d5791ad671a510",
+            "name": "Truyện Màu",
+            "slug": "truyen-mau"
+          }
+        ],
+        "updatedAt": "2024-10-02T03:47:02.515Z",
+        "chaptersLatest": [
+          {
+            "filename": "Trang Phục Của Julieta [Chap 31-35]",
+            "chapter_name": "35",
+            "chapter_title": "",
+            "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/66fcbcadc926626890a335e7"
+          }
+        ]
+      },
+      {
+        "_id": "65e953e3fad3f557c4fef970",
+        "name": "Bổn Thánh Nữ Ngã Bài Rồi",
+        "slug": "bon-thanh-nu-nga-bai-roi",
+        "origin_name": [
+          ""
+        ],
+        "status": "ongoing",
+        "thumb_url": "bon-thanh-nu-nga-bai-roi-thumb.jpg",
+        "sub_docquyen": false,
+        "category": [
+          {
+            "id": "6508654905d5791ad671a4b8",
+            "name": "Cổ Đại",
+            "slug": "co-dai"
+          },
+          {
+            "id": "6508654905d5791ad671a4af",
+            "name": "Comedy",
+            "slug": "comedy"
+          },
+          {
+            "id": "6508654905d5791ad671a4d8",
+            "name": "Manhua",
+            "slug": "manhua"
+          },
+          {
+            "id": "6508654a05d5791ad671a510",
+            "name": "Truyện Màu",
+            "slug": "truyen-mau"
+          }
+        ],
+        "updatedAt": "2025-06-09T08:27:20.797Z",
+        "chaptersLatest": [
+          {
+            "filename": "Bổn Thánh Nữ Ngã Bài Rồi [Chap 348-393]",
+            "chapter_name": "393",
+            "chapter_title": "",
+            "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/68469a61c705a578a7fe7094"
+          }
+        ]
+      },
+      {
+        "_id": "65e3ef8766b83f071100c170",
+        "name": "Xin Đừng Tùy Tiện Tỏ Ra Tử Tế",
+        "slug": "xin-dung-tuy-tien-to-ra-tu-te",
+        "origin_name": [
+          ""
+        ],
+        "status": "ongoing",
+        "thumb_url": "xin-dung-tuy-tien-to-ra-tu-te-thumb.jpg",
+        "sub_docquyen": false,
+        "category": [
+          {
+            "id": "6508654905d5791ad671a4b8",
+            "name": "Cổ Đại",
+            "slug": "co-dai"
+          },
+          {
+            "id": "6508654905d5791ad671a4da",
+            "name": "Manhwa",
+            "slug": "manhwa"
+          },
+          {
+            "id": "6508654905d5791ad671a4e4",
+            "name": "Ngôn Tình",
+            "slug": "ngon-tinh"
+          },
+          {
+            "id": "6508654905d5791ad671a4ea",
+            "name": "Romance",
+            "slug": "romance"
+          },
+          {
+            "id": "6508654a05d5791ad671a510",
+            "name": "Truyện Màu",
+            "slug": "truyen-mau"
+          }
+        ],
+        "updatedAt": "2024-06-14T09:21:08.138Z",
+        "chaptersLatest": [
+          {
+            "filename": "Xin Đừng Tùy Tiện Tỏ Ra Tử Tế [Chap 10]",
+            "chapter_name": "10",
+            "chapter_title": "",
+            "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/666c0871a4468f0e0ddf9c7a"
+          }
+        ]
+      },
+      {
+        "_id": "65dee6affad3f557c4f24baf",
+        "name": "Kẻ Cưỡng Bức Yêu Quý Của Tôi",
+        "slug": "ke-cuong-buc-yeu-quy-cua-toi",
+        "origin_name": [
+          ""
+        ],
+        "status": "ongoing",
+        "thumb_url": "ke-cuong-buc-yeu-quy-cua-toi-thumb.jpg",
+        "sub_docquyen": false,
+        "category": [
+          {
+            "id": "6508654905d5791ad671a4b8",
+            "name": "Cổ Đại",
+            "slug": "co-dai"
+          },
+          {
+            "id": "6508654905d5791ad671a4be",
+            "name": "Drama",
+            "slug": "drama"
+          },
+          {
+            "id": "6508654905d5791ad671a4c7",
+            "name": "Fantasy",
+            "slug": "fantasy"
+          },
+          {
+            "id": "6508654905d5791ad671a4da",
+            "name": "Manhwa",
+            "slug": "manhwa"
+          },
+          {
+            "id": "6508654905d5791ad671a4e4",
+            "name": "Ngôn Tình",
+            "slug": "ngon-tinh"
+          },
+          {
+            "id": "6508654a05d5791ad671a510",
+            "name": "Truyện Màu",
+            "slug": "truyen-mau"
+          }
+        ],
+        "updatedAt": "2024-05-05T08:24:36.845Z",
+        "chaptersLatest": [
+          {
+            "filename": "Kẻ Cưỡng Bức Yêu Quý Của Tôi [Chap 18.1-18.2]",
+            "chapter_name": "18.2",
+            "chapter_title": "",
+            "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/663740118d19104b9c7610a7"
+          }
+        ]
+      },
+      {
+        "_id": "65ddb890fad3f557c4f1b03c",
+        "name": "Hôm Nay Sát Thủ Chỉ Muốn Làm Cá Muối",
+        "slug": "hom-nay-sat-thu-chi-muon-lam-ca-muoi",
+        "origin_name": [
+          ""
+        ],
+        "status": "ongoing",
+        "thumb_url": "hom-nay-sat-thu-chi-muon-lam-ca-muoi-thumb.jpg",
+        "sub_docquyen": false,
+        "category": [
+          {
+            "id": "6508654905d5791ad671a4b8",
+            "name": "Cổ Đại",
+            "slug": "co-dai"
+          },
+          {
+            "id": "6508654905d5791ad671a4d8",
+            "name": "Manhua",
+            "slug": "manhua"
+          },
+          {
+            "id": "6508654905d5791ad671a4e4",
+            "name": "Ngôn Tình",
+            "slug": "ngon-tinh"
+          },
+          {
+            "id": "6508654a05d5791ad671a510",
+            "name": "Truyện Màu",
+            "slug": "truyen-mau"
+          }
+        ],
+        "updatedAt": "2024-02-27T10:38:48.620Z",
+        "chaptersLatest": [
+          {
+            "filename": "Hôm Nay Sát Thủ Chỉ Muốn Làm Cá Muối [Chap 1-4]",
+            "chapter_name": "4",
+            "chapter_title": "",
+            "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/65ddb70d164c256eada7a0e9"
+          }
+        ]
+      },
+      {
+        "_id": "65dc2b5ffad3f557c4f13c52",
+        "name": "Hồ Ly Cáo Già Và Bạch Liên Hoa Cao Lãnh  Ai Sẽ Lộ Tẩy Trước Đây?",
+        "slug": "ho-ly-cao-gia-va-bach-lien-hoa-cao-lanh-ai-se-lo-tay-truoc-day",
+        "origin_name": [
+          ""
+        ],
+        "status": "ongoing",
+        "thumb_url": "ho-ly-cao-gia-va-bach-lien-hoa-cao-lanh-ai-se-lo-tay-truoc-day-thumb.jpg",
+        "sub_docquyen": false,
+        "category": [
+          {
+            "id": "6508654905d5791ad671a4b8",
+            "name": "Cổ Đại",
+            "slug": "co-dai"
+          },
+          {
+            "id": "6508654905d5791ad671a4d8",
+            "name": "Manhua",
+            "slug": "manhua"
+          },
+          {
+            "id": "6508654905d5791ad671a4e4",
+            "name": "Ngôn Tình",
+            "slug": "ngon-tinh"
+          },
+          {
+            "id": "6508654a05d5791ad671a510",
+            "name": "Truyện Màu",
+            "slug": "truyen-mau"
+          }
+        ],
+        "updatedAt": "2024-06-26T09:01:54.452Z",
+        "chaptersLatest": [
+          {
+            "filename": "Hồ Ly Cáo Già Và Bạch Liên Hoa Cao Lãnh  Ai Sẽ Lộ Tẩy Trước Đây [Chap 51]",
+            "chapter_name": "51",
+            "chapter_title": "",
+            "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/667bd3b3a4468f0e0de01534"
+          }
+        ]
+      },
+      {
+        "_id": "65dac6b666b83f0711f8e753",
+        "name": "Vị Phu Quân Căm Ghét Tôi Đã Mất Trí Nhớ",
+        "slug": "vi-phu-quan-cam-ghet-toi-da-mat-tri-nho",
+        "origin_name": [
+          "Người Chồng Căm Ghét Tôi Đã Mất Trí Nhớ"
+        ],
+        "status": "ongoing",
+        "thumb_url": "vi-phu-quan-cam-ghet-toi-da-mat-tri-nho-thumb.jpg",
+        "sub_docquyen": false,
+        "category": [
+          {
+            "id": "6508654905d5791ad671a4b8",
+            "name": "Cổ Đại",
+            "slug": "co-dai"
+          },
+          {
+            "id": "6508654905d5791ad671a4da",
+            "name": "Manhwa",
+            "slug": "manhwa"
+          },
+          {
+            "id": "6508654905d5791ad671a4e4",
+            "name": "Ngôn Tình",
+            "slug": "ngon-tinh"
+          },
+          {
+            "id": "6508654905d5791ad671a4e8",
+            "name": "Psychological",
+            "slug": "psychological"
+          },
+          {
+            "id": "6508654905d5791ad671a4ea",
+            "name": "Romance",
+            "slug": "romance"
+          },
+          {
+            "id": "6508654a05d5791ad671a510",
+            "name": "Truyện Màu",
+            "slug": "truyen-mau"
+          }
+        ],
+        "updatedAt": "2025-05-15T08:43:53.724Z",
+        "chaptersLatest": [
+          {
+            "filename": "Vị Phu Quân Căm Ghét Tôi Đã Mất Trí Nhớ [Chap 68-71]",
+            "chapter_name": "71",
+            "chapter_title": "",
+            "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/682437eac705a578a7fd951c"
+          }
+        ]
+      },
+      {
+        "_id": "65c72fec66b83f0711f662b0",
+        "name": "Giết Chết Niềm An Ủi Duy Nhất Của Ta",
+        "slug": "giet-chet-niem-an-ui-duy-nhat-cua-ta",
+        "origin_name": [
+          ""
+        ],
+        "status": "ongoing",
+        "thumb_url": "giet-chet-niem-an-ui-duy-nhat-cua-ta-thumb.jpg",
+        "sub_docquyen": false,
+        "category": [
+          {
+            "id": "6508654905d5791ad671a4b8",
+            "name": "Cổ Đại",
+            "slug": "co-dai"
+          },
+          {
+            "id": "6508654905d5791ad671a4da",
+            "name": "Manhwa",
+            "slug": "manhwa"
+          },
+          {
+            "id": "6508654905d5791ad671a4e4",
+            "name": "Ngôn Tình",
+            "slug": "ngon-tinh"
+          },
+          {
+            "id": "6508654a05d5791ad671a50a",
+            "name": "Tragedy",
+            "slug": "tragedy"
+          },
+          {
+            "id": "6508654a05d5791ad671a510",
+            "name": "Truyện Màu",
+            "slug": "truyen-mau"
+          }
+        ],
+        "updatedAt": "2024-05-17T20:39:07.669Z",
+        "chaptersLatest": [
+          {
+            "filename": "Giết Chết Niềm An Ủi Duy Nhất Của Ta [Chap 1.1-18.2]",
+            "chapter_name": "18.2",
+            "chapter_title": "",
+            "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/6647b8aba833720746730355"
+          }
+        ]
+      },
+      {
+        "_id": "65c2eb9f66b83f0711f4ca5a",
+        "name": "Ta Có Trăm Triệu Năm Tu Vi",
+        "slug": "ta-co-tram-trieu-nam-tu-vi",
+        "origin_name": [
+          ""
+        ],
+        "status": "ongoing",
+        "thumb_url": "ta-co-tram-trieu-nam-tu-vi-thumb.jpg",
+        "sub_docquyen": false,
+        "category": [
+          {
+            "id": "6508654905d5791ad671a491",
+            "name": "Action",
+            "slug": "action"
+          },
+          {
+            "id": "6508654905d5791ad671a4b8",
+            "name": "Cổ Đại",
+            "slug": "co-dai"
+          },
+          {
+            "id": "6508654905d5791ad671a4c7",
+            "name": "Fantasy",
+            "slug": "fantasy"
+          },
+          {
+            "id": "6508654905d5791ad671a4d8",
+            "name": "Manhua",
+            "slug": "manhua"
+          },
+          {
+            "id": "6508654a05d5791ad671a510",
+            "name": "Truyện Màu",
+            "slug": "truyen-mau"
+          },
+          {
+            "id": "6508654a05d5791ad671a516",
+            "name": "Xuyên Không",
+            "slug": "xuyen-khong"
+          }
+        ],
+        "updatedAt": "2024-02-07T02:48:54.717Z",
+        "chaptersLatest": [
+          {
+            "filename": "Ta Có Trăm Triệu Năm Tu Vi [Chap 0-0]",
+            "chapter_name": "0",
+            "chapter_title": "Giới Thiệu",
+            "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/65c2ea59d99f3dea41c79316"
+          }
+        ]
+      },
+      {
+        "_id": "65c04401fad3f557c4ec46ad",
+        "name": "Bị ăn mòn, Ta Phải Dựa Vào Đồ Đệ Để Kéo Dài Tính Mạng",
+        "slug": "bi-an-mon-ta-phai-dua-vao-do-de-de-keo-dai-tinh-mang",
+        "origin_name": [
+          ""
+        ],
+        "status": "ongoing",
+        "thumb_url": "bi-an-mon-ta-phai-dua-vao-do-de-de-keo-dai-tinh-mang-thumb.jpg",
+        "sub_docquyen": false,
+        "category": [
+          {
+            "id": "6508654905d5791ad671a491",
+            "name": "Action",
+            "slug": "action"
+          },
+          {
+            "id": "6508654905d5791ad671a4b8",
+            "name": "Cổ Đại",
+            "slug": "co-dai"
+          },
+          {
+            "id": "6508654905d5791ad671a4c7",
+            "name": "Fantasy",
+            "slug": "fantasy"
+          },
+          {
+            "id": "6508654905d5791ad671a4d8",
+            "name": "Manhua",
+            "slug": "manhua"
+          },
+          {
+            "id": "6508654a05d5791ad671a510",
+            "name": "Truyện Màu",
+            "slug": "truyen-mau"
+          }
+        ],
+        "updatedAt": "2024-02-05T04:44:48.919Z",
+        "chaptersLatest": [
+          {
+            "filename": "Bị ăn mòn Ta Phải Dựa Vào Đồ Đệ Để Kéo Dài Tính Mạng [Chap 0-0]",
+            "chapter_name": "0",
+            "chapter_title": "Giới thiệu",
+            "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/65c065fa0b71e8bf0af85c69"
+          }
+        ]
+      },
+      {
+        "_id": "65c04400fad3f557c4ec46a6",
+        "name": "Bạch Trạch Chi Danh",
+        "slug": "bach-trach-chi-danh",
+        "origin_name": [
+          ""
+        ],
+        "status": "ongoing",
+        "thumb_url": "bach-trach-chi-danh-thumb.jpg",
+        "sub_docquyen": false,
+        "category": [
+          {
+            "id": "6508654905d5791ad671a4ac",
+            "name": "Chuyển Sinh",
+            "slug": "chuyen-sinh"
+          },
+          {
+            "id": "6508654905d5791ad671a4b8",
+            "name": "Cổ Đại",
+            "slug": "co-dai"
+          },
+          {
+            "id": "6508654905d5791ad671a4c1",
+            "name": "Đam Mỹ",
+            "slug": "dam-my"
+          },
+          {
+            "id": "6508654a05d5791ad671a510",
+            "name": "Truyện Màu",
+            "slug": "truyen-mau"
+          }
+        ],
+        "updatedAt": "2024-03-02T07:24:46.738Z",
+        "chaptersLatest": [
+          {
+            "filename": "Bạch Trạch Chi Danh [Chap 19]",
+            "chapter_name": "19",
+            "chapter_title": "",
+            "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/65e2d269164c256eada7cd31"
+          }
+        ]
+      },
+      {
+        "_id": "65bb241bfad3f557c4eb7368",
+        "name": "Xuyên Về Cổ Đại Làm Nữ Phụ Vô Dụng",
+        "slug": "xuyen-ve-co-dai-lam-nu-phu-vo-dung",
+        "origin_name": [
+          ""
+        ],
+        "status": "ongoing",
+        "thumb_url": "xuyen-ve-co-dai-lam-nu-phu-vo-dung-thumb.jpg",
+        "sub_docquyen": false,
+        "category": [
+          {
+            "id": "6508654905d5791ad671a4b8",
+            "name": "Cổ Đại",
+            "slug": "co-dai"
+          },
+          {
+            "id": "6508654905d5791ad671a4af",
+            "name": "Comedy",
+            "slug": "comedy"
+          },
+          {
+            "id": "6508654905d5791ad671a4cc",
+            "name": "Harem",
+            "slug": "harem"
+          },
+          {
+            "id": "6508654905d5791ad671a4d8",
+            "name": "Manhua",
+            "slug": "manhua"
+          },
+          {
+            "id": "6508654905d5791ad671a4e2",
+            "name": "Mystery",
+            "slug": "mystery"
+          },
+          {
+            "id": "6508654905d5791ad671a4e4",
+            "name": "Ngôn Tình",
+            "slug": "ngon-tinh"
+          },
+          {
+            "id": "6508654a05d5791ad671a510",
+            "name": "Truyện Màu",
+            "slug": "truyen-mau"
+          }
+        ],
+        "updatedAt": "2024-02-01T07:03:59.512Z",
+        "chaptersLatest": [
+          {
+            "filename": "Xuyên Về Cổ Đại Làm Nữ Phụ Vô Dụng [Chap 1-75]",
+            "chapter_name": "75",
+            "chapter_title": "",
+            "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/65bb35b2d99f3dea41c73b9e"
+          }
+        ]
+      },
+      {
+        "_id": "65b9ef39fad3f557c4eb5c20",
+        "name": "Người Thừa Kế Của Qủy",
+        "slug": "nguoi-thua-ke-cua-quy",
+        "origin_name": [
+          ""
+        ],
+        "status": "ongoing",
+        "thumb_url": "nguoi-thua-ke-cua-quy-thumb.jpg",
+        "sub_docquyen": false,
+        "category": [
+          {
+            "id": "6508654905d5791ad671a4b8",
+            "name": "Cổ Đại",
+            "slug": "co-dai"
+          },
+          {
+            "id": "6508654905d5791ad671a4c1",
+            "name": "Đam Mỹ",
+            "slug": "dam-my"
+          },
+          {
+            "id": "6508654905d5791ad671a4da",
+            "name": "Manhwa",
+            "slug": "manhwa"
+          },
+          {
+            "id": "6508654a05d5791ad671a510",
+            "name": "Truyện Màu",
+            "slug": "truyen-mau"
+          }
+        ],
+        "updatedAt": "2024-02-11T07:44:08.341Z",
+        "chaptersLatest": [
+          {
+            "filename": "Người Thừa Kế Của Qủy [Chap 21]",
+            "chapter_name": "21",
+            "chapter_title": "",
+            "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/65c8748c0b71e8bf0af8ae69"
+          }
+        ]
+      },
+      {
+        "_id": "65b5d3e466b83f0711f314a6",
+        "name": "Tôi Trở Thành Mẹ Kế Của Gia Đình Hắc Ám",
+        "slug": "toi-tro-thanh-me-ke-cua-gia-dinh-hac-am",
+        "origin_name": [
+          ""
+        ],
+        "status": "ongoing",
+        "thumb_url": "toi-tro-thanh-me-ke-cua-gia-dinh-hac-am-thumb.jpg",
+        "sub_docquyen": false,
+        "category": [
+          {
+            "id": "6508654905d5791ad671a4ac",
+            "name": "Chuyển Sinh",
+            "slug": "chuyen-sinh"
+          },
+          {
+            "id": "6508654905d5791ad671a4b8",
+            "name": "Cổ Đại",
+            "slug": "co-dai"
+          },
+          {
+            "id": "6508654905d5791ad671a4da",
+            "name": "Manhwa",
+            "slug": "manhwa"
+          },
+          {
+            "id": "6508654905d5791ad671a4e4",
+            "name": "Ngôn Tình",
+            "slug": "ngon-tinh"
+          },
+          {
+            "id": "6508654905d5791ad671a4ea",
+            "name": "Romance",
+            "slug": "romance"
+          },
+          {
+            "id": "6508654a05d5791ad671a510",
+            "name": "Truyện Màu",
+            "slug": "truyen-mau"
+          }
+        ],
+        "updatedAt": "2025-06-14T04:04:36.079Z",
+        "chaptersLatest": [
+          {
+            "filename": "Tôi Trở Thành Mẹ Kế Của Gia Đình Hắc Ám [Chap 63-64]",
+            "chapter_name": "64",
+            "chapter_title": "",
+            "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/684cf29ec926626890aa6ce6"
+          }
+        ]
+      },
+      {
+        "_id": "65b4b4adfad3f557c4eb103c",
+        "name": "Phu Quân Ta Nuôi Từ Bé Muốn Thủ Tiêu Ta",
+        "slug": "phu-quan-ta-nuoi-tu-be-muon-thu-tieu-ta",
+        "origin_name": [
+          ""
+        ],
+        "status": "ongoing",
+        "thumb_url": "phu-quan-ta-nuoi-tu-be-muon-thu-tieu-ta-thumb.jpg",
+        "sub_docquyen": false,
+        "category": [
+          {
+            "id": "6508654905d5791ad671a4b8",
+            "name": "Cổ Đại",
+            "slug": "co-dai"
+          },
+          {
+            "id": "6508654905d5791ad671a4af",
+            "name": "Comedy",
+            "slug": "comedy"
+          },
+          {
+            "id": "6508654905d5791ad671a4d8",
+            "name": "Manhua",
+            "slug": "manhua"
+          },
+          {
+            "id": "6508654905d5791ad671a4e4",
+            "name": "Ngôn Tình",
+            "slug": "ngon-tinh"
+          },
+          {
+            "id": "6508654a05d5791ad671a510",
+            "name": "Truyện Màu",
+            "slug": "truyen-mau"
+          },
+          {
+            "id": "6508654a05d5791ad671a516",
+            "name": "Xuyên Không",
+            "slug": "xuyen-khong"
+          }
+        ],
+        "updatedAt": "2024-01-27T07:46:02.244Z",
+        "chaptersLatest": [
+          {
+            "filename": "Phu Quân Ta Nuôi Từ Bé Muốn Thủ Tiêu Ta [Chap 1-39]",
+            "chapter_name": "39",
+            "chapter_title": "",
+            "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/65b49df3d99f3dea41c6bc4c"
+          }
+        ]
+      },
+      {
+        "_id": "65b1fcf8fad3f557c4ead865",
+        "name": "Thần Y Hoàng Hậu",
+        "slug": "than-y-hoang-hau",
+        "origin_name": [
+          ""
+        ],
+        "status": "ongoing",
+        "thumb_url": "than-y-hoang-hau-thumb.jpg",
+        "sub_docquyen": false,
+        "category": [
+          {
+            "id": "6508654905d5791ad671a4b8",
+            "name": "Cổ Đại",
+            "slug": "co-dai"
+          },
+          {
+            "id": "6508654905d5791ad671a4d8",
+            "name": "Manhua",
+            "slug": "manhua"
+          },
+          {
+            "id": "6508654905d5791ad671a4e4",
+            "name": "Ngôn Tình",
+            "slug": "ngon-tinh"
+          },
+          {
+            "id": "6508654a05d5791ad671a510",
+            "name": "Truyện Màu",
+            "slug": "truyen-mau"
+          }
+        ],
+        "updatedAt": "2024-05-20T06:12:57.611Z",
+        "chaptersLatest": [
+          {
+            "filename": "Thần Y Hoàng Hậu [Chap 20]",
+            "chapter_name": "20",
+            "chapter_title": "",
+            "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/664ae4c6a4468f0e0dd1e751"
+          }
+        ]
+      },
+      {
+        "_id": "65b1faadfad3f557c4ead677",
+        "name": "Phượng Hoàng Quy Hồi",
+        "slug": "phuong-hoang-quy-hoi",
+        "origin_name": [
+          ""
+        ],
+        "status": "ongoing",
+        "thumb_url": "phuong-hoang-quy-hoi-thumb.jpg",
+        "sub_docquyen": false,
+        "category": [
+          {
+            "id": "6508654905d5791ad671a4b8",
+            "name": "Cổ Đại",
+            "slug": "co-dai"
+          },
+          {
+            "id": "6508654905d5791ad671a4d8",
+            "name": "Manhua",
+            "slug": "manhua"
+          },
+          {
+            "id": "6508654905d5791ad671a4e4",
+            "name": "Ngôn Tình",
+            "slug": "ngon-tinh"
+          },
+          {
+            "id": "6508654a05d5791ad671a510",
+            "name": "Truyện Màu",
+            "slug": "truyen-mau"
+          }
+        ],
+        "updatedAt": "2024-02-03T09:04:56.662Z",
+        "chaptersLatest": [
+          {
+            "filename": "Phượng Hoàng Quy Hồi [Chap 20]",
+            "chapter_name": "20",
+            "chapter_title": "",
+            "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/65bdfb070b71e8bf0af83ec5"
+          }
+        ]
+      },
+      {
+        "_id": "6598f6ba10dc9c0a7e2f7c39",
+        "name": "Nương Nương Mỗi Ngày Đều Trốn Thị Tẩm",
+        "slug": "nuong-nuong-moi-ngay-deu-tron-thi-tam",
+        "origin_name": [
+          "Nương Nương Mỗi Này Đều Trốn Không Muốn Sủng Hạnh"
+        ],
+        "status": "ongoing",
+        "thumb_url": "nuong-nuong-moi-ngay-deu-tron-thi-tam-thumb.jpg",
+        "sub_docquyen": false,
+        "category": [
+          {
+            "id": "6508654905d5791ad671a4b8",
+            "name": "Cổ Đại",
+            "slug": "co-dai"
+          },
+          {
+            "id": "6508654905d5791ad671a4d8",
+            "name": "Manhua",
+            "slug": "manhua"
+          },
+          {
+            "id": "6508654905d5791ad671a4e4",
+            "name": "Ngôn Tình",
+            "slug": "ngon-tinh"
+          },
+          {
+            "id": "6508654a05d5791ad671a510",
+            "name": "Truyện Màu",
+            "slug": "truyen-mau"
+          },
+          {
+            "id": "6508654a05d5791ad671a516",
+            "name": "Xuyên Không",
+            "slug": "xuyen-khong"
+          }
+        ],
+        "updatedAt": "2024-03-14T05:53:03.686Z",
+        "chaptersLatest": [
+          {
+            "filename": "Nương Nương Mỗi Ngày Đều Trốn Thị Tẩm [Chap 21]",
+            "chapter_name": "21",
+            "chapter_title": "",
+            "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/65f28cd78d19104b9c740fd8"
+          }
+        ]
+      }
+    ],
+    "params": {
+      "type_slug": "the-loai",
+      "slug": "co-dai",
+      "filterCategory": [
+        "co-dai"
+      ],
+      "sortField": "_id",
+      "sortType": "desc",
+      "pagination": {
+        "totalItems": 980,
+        "totalItemsPerPage": 24,
+        "currentPage": 1,
+        "pageRanges": 5
+      }
+    },
+    "type_list": "co-dai",
+    "APP_DOMAIN_FRONTEND": "https://otruyen.cc",
+    "APP_DOMAIN_CDN_IMAGE": "https://img.otruyenapi.com"
+  }
+}
+```
+
+---
+
+## ✅ 3. Chi tiết truyện (by slug)
+
+**Endpoint**:
+`GET https://otruyenapi.com/v1/api/truyen-tranh/{slug}`
+**Ví dụ**: `/truyen-tranh/my-death-flags-show-no-sign-of-ending`
+
+**Response (rút gọn):**
+
+```json
+{
+  "status": "success",
+  "message": "",
+  "data": {
+    "seoOnPage": {
+      "og_type": "website",
+      "titleHead": "Giam Cầm - ",
+      "seoSchema": {
+        "@context": "https://schema.org",
+        "@type": "website",
+        "name": "Giam Cầm - ",
+        "url": "https://otruyen.cc/truyen-tranh/giam-cam",
+        "image": "https://img.otruyenapi.com/uploads/comics/giam-cam-thumb.jpg",
+        "director": "Đang cập nhật"
+      },
+      "descriptionHead": "Truyện tranh Giam Cầm được cập nhật nhanh và đầy đủ nhất tại NetTruyen. Bạn đọc đừng quên để lại bình luận và chia sẻ, ủng hộ NetTruyen ra các chương mới nhất của truyện Giam...",
+      "og_image": [
+        "comics/giam-cam-thumb.jpg"
+      ],
+      "updated_time": 1731037126466,
+      "og_url": "truyen-tranh/giam-cam"
+    },
+    "breadCrumb": [
+      {
+        "name": "Cổ Đại",
+        "slug": "/the-loai/co-dai",
+        "position": 2
+      },
+      {
+        "name": "Comedy",
+        "slug": "/the-loai/comedy",
+        "position": 2
+      },
+      {
+        "name": "Drama",
+        "slug": "/the-loai/drama",
+        "position": 2
+      },
+      {
+        "name": "Manhwa",
+        "slug": "/the-loai/manhwa",
+        "position": 2
+      },
+      {
+        "name": "Ngôn Tình",
+        "slug": "/the-loai/ngon-tinh",
+        "position": 2
+      },
+      {
+        "name": "Truyện Màu",
+        "slug": "/the-loai/truyen-mau",
+        "position": 2
+      },
+      {
+        "name": "Giam Cầm",
+        "isCurrent": true,
+        "position": 3
+      }
+    ],
+    "params": {
+      "slug": "giam-cam",
+      "crawl_check_url": ""
+    },
+    "item": {
+      "_id": "65f3f87bfad3f557c405546c",
+      "name": "Giam Cầm",
+      "slug": "giam-cam",
+      "origin_name": [
+        ""
+      ],
+      "content": "<p>Truyện tranh Giam Cầm được cập nhật nhanh và đầy đủ nhất tại NetTruyen. Bạn đọc đừng quên để lại bình luận và chia sẻ, ủng hộ NetTruyen ra các chương mới nhất của truyện Giam Cầm.</p>",
+      "status": "ongoing",
+      "thumb_url": "giam-cam-thumb.jpg",
+      "sub_docquyen": false,
+      "author": [
+        "Đang cập nhật"
+      ],
+      "category": [
+        {
+          "id": "6508654905d5791ad671a4b8",
+          "name": "Cổ Đại",
+          "slug": "co-dai"
+        },
+        {
+          "id": "6508654905d5791ad671a4af",
+          "name": "Comedy",
+          "slug": "comedy"
+        },
+        {
+          "id": "6508654905d5791ad671a4be",
+          "name": "Drama",
+          "slug": "drama"
+        },
+        {
+          "id": "6508654905d5791ad671a4da",
+          "name": "Manhwa",
+          "slug": "manhwa"
+        },
+        {
+          "id": "6508654905d5791ad671a4e4",
+          "name": "Ngôn Tình",
+          "slug": "ngon-tinh"
+        },
+        {
+          "id": "6508654a05d5791ad671a510",
+          "name": "Truyện Màu",
+          "slug": "truyen-mau"
+        }
+      ],
+      "chapters": [
+        {
+          "server_name": "Server #1",
+          "server_data": [
+            {
+              "filename": "Giam Cầm [Chap 1.1-25.2]",
+              "chapter_name": "1.1",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/65f3f8148d19104b9c741b00"
+            },
+            {
+              "filename": "Giam Cầm [Chap 1.1-25.2]",
+              "chapter_name": "1.2",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/65f3f8168d19104b9c741b03"
+            },
+            {
+              "filename": "Giam Cầm [Chap 1.1-25.2]",
+              "chapter_name": "2.1",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/65f3f8178d19104b9c741b06"
+            },
+            {
+              "filename": "Giam Cầm [Chap 1.1-25.2]",
+              "chapter_name": "2.2",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/65f3f8198d19104b9c741b09"
+            },
+            {
+              "filename": "Giam Cầm [Chap 1.1-25.2]",
+              "chapter_name": "3.1",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/65f3f81a8d19104b9c741b0c"
+            },
+            {
+              "filename": "Giam Cầm [Chap 1.1-25.2]",
+              "chapter_name": "3.2",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/65f3f81c8d19104b9c741b0f"
+            },
+            {
+              "filename": "Giam Cầm [Chap 1.1-25.2]",
+              "chapter_name": "4.1",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/65f3f81c8d19104b9c741b12"
+            },
+            {
+              "filename": "Giam Cầm [Chap 1.1-25.2]",
+              "chapter_name": "4.2",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/65f3f81d8d19104b9c741b15"
+            },
+            {
+              "filename": "Giam Cầm [Chap 1.1-25.2]",
+              "chapter_name": "5.1",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/65f3f81e8d19104b9c741b19"
+            },
+            {
+              "filename": "Giam Cầm [Chap 1.1-25.2]",
+              "chapter_name": "5.2",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/65f3f81f8d19104b9c741b1c"
+            },
+            {
+              "filename": "Giam Cầm [Chap 1.1-25.2]",
+              "chapter_name": "6.1",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/65f3f81f8d19104b9c741b1f"
+            },
+            {
+              "filename": "Giam Cầm [Chap 1.1-25.2]",
+              "chapter_name": "6.2",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/65f3f8208d19104b9c741b24"
+            },
+            {
+              "filename": "Giam Cầm [Chap 1.1-25.2]",
+              "chapter_name": "7.1",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/65f3f8218d19104b9c741b27"
+            },
+            {
+              "filename": "Giam Cầm [Chap 1.1-25.2]",
+              "chapter_name": "7.2",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/65f3f8228d19104b9c741b2a"
+            },
+            {
+              "filename": "Giam Cầm [Chap 1.1-25.2]",
+              "chapter_name": "8.1",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/65f3f8228d19104b9c741b2d"
+            },
+            {
+              "filename": "Giam Cầm [Chap 1.1-25.2]",
+              "chapter_name": "8.2",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/65f3f8248d19104b9c741b30"
+            },
+            {
+              "filename": "Giam Cầm [Chap 1.1-25.2]",
+              "chapter_name": "9.1",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/65f3f8248d19104b9c741b33"
+            },
+            {
+              "filename": "Giam Cầm [Chap 1.1-25.2]",
+              "chapter_name": "9.2",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/65f3f8268d19104b9c741b38"
+            },
+            {
+              "filename": "Giam Cầm [Chap 1.1-25.2]",
+              "chapter_name": "10.1",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/65f3f8278d19104b9c741b3b"
+            },
+            {
+              "filename": "Giam Cầm [Chap 1.1-25.2]",
+              "chapter_name": "10.2",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/65f3f8288d19104b9c741b3e"
+            },
+            {
+              "filename": "Giam Cầm [Chap 1.1-25.2]",
+              "chapter_name": "11.1",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/65f3f8288d19104b9c741b41"
+            },
+            {
+              "filename": "Giam Cầm [Chap 1.1-25.2]",
+              "chapter_name": "11.2",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/65f3f82a8d19104b9c741b46"
+            },
+            {
+              "filename": "Giam Cầm [Chap 1.1-25.2]",
+              "chapter_name": "12.1",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/65f3f82a8d19104b9c741b49"
+            },
+            {
+              "filename": "Giam Cầm [Chap 1.1-25.2]",
+              "chapter_name": "12.2",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/65f3f82c8d19104b9c741b4c"
+            },
+            {
+              "filename": "Giam Cầm [Chap 1.1-25.2]",
+              "chapter_name": "13.1",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/65f3f82d8d19104b9c741b51"
+            },
+            {
+              "filename": "Giam Cầm [Chap 1.1-25.2]",
+              "chapter_name": "13.2",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/65f3f82e8d19104b9c741b55"
+            },
+            {
+              "filename": "Giam Cầm [Chap 1.1-25.2]",
+              "chapter_name": "14.1",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/65f3f8308d19104b9c741b58"
+            },
+            {
+              "filename": "Giam Cầm [Chap 1.1-25.2]",
+              "chapter_name": "14.2",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/65f3f8318d19104b9c741b5d"
+            },
+            {
+              "filename": "Giam Cầm [Chap 1.1-25.2]",
+              "chapter_name": "15.1",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/65f3f8318d19104b9c741b60"
+            },
+            {
+              "filename": "Giam Cầm [Chap 1.1-25.2]",
+              "chapter_name": "15.2",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/65f3f8318d19104b9c741b63"
+            },
+            {
+              "filename": "Giam Cầm [Chap 1.1-25.2]",
+              "chapter_name": "16.1",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/65f3f8318d19104b9c741b66"
+            },
+            {
+              "filename": "Giam Cầm [Chap 1.1-25.2]",
+              "chapter_name": "16.2",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/65f3f8318d19104b9c741b69"
+            },
+            {
+              "filename": "Giam Cầm [Chap 1.1-25.2]",
+              "chapter_name": "17.1",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/65f3f8318d19104b9c741b6d"
+            },
+            {
+              "filename": "Giam Cầm [Chap 1.1-25.2]",
+              "chapter_name": "17.2",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/65f3f8318d19104b9c741b70"
+            },
+            {
+              "filename": "Giam Cầm [Chap 1.1-25.2]",
+              "chapter_name": "18.1",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/65f3f8328d19104b9c741b73"
+            },
+            {
+              "filename": "Giam Cầm [Chap 1.1-25.2]",
+              "chapter_name": "18.2",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/65f3f8338d19104b9c741b77"
+            },
+            {
+              "filename": "Giam Cầm [Chap 1.1-25.2]",
+              "chapter_name": "19.1",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/65f3f8348d19104b9c741b7a"
+            },
+            {
+              "filename": "Giam Cầm [Chap 1.1-25.2]",
+              "chapter_name": "19.2",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/65f3f8358d19104b9c741b7d"
+            },
+            {
+              "filename": "Giam Cầm [Chap 1.1-25.2]",
+              "chapter_name": "20.1",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/65f3f8358d19104b9c741b80"
+            },
+            {
+              "filename": "Giam Cầm [Chap 1.1-25.2]",
+              "chapter_name": "20.2",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/65f3f8368d19104b9c741b83"
+            },
+            {
+              "filename": "Giam Cầm [Chap 1.1-25.2]",
+              "chapter_name": "21.1",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/65f3f8378d19104b9c741b86"
+            },
+            {
+              "filename": "Giam Cầm [Chap 1.1-25.2]",
+              "chapter_name": "21.2",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/65f3f8388d19104b9c741b89"
+            },
+            {
+              "filename": "Giam Cầm [Chap 1.1-25.2]",
+              "chapter_name": "22.1",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/65f3f8398d19104b9c741b8c"
+            },
+            {
+              "filename": "Giam Cầm [Chap 1.1-25.2]",
+              "chapter_name": "22.2",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/65f3f83a8d19104b9c741b8f"
+            },
+            {
+              "filename": "Giam Cầm [Chap 1.1-25.2]",
+              "chapter_name": "23.1",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/65f3f83a8d19104b9c741b92"
+            },
+            {
+              "filename": "Giam Cầm [Chap 1.1-25.2]",
+              "chapter_name": "23.2",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/65f3f83b8d19104b9c741b95"
+            },
+            {
+              "filename": "Giam Cầm [Chap 1.1-25.2]",
+              "chapter_name": "24.1",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/65f3f83d8d19104b9c741b98"
+            },
+            {
+              "filename": "Giam Cầm [Chap 1.1-25.2]",
+              "chapter_name": "24.2",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/65f3f83e8d19104b9c741b9b"
+            },
+            {
+              "filename": "Giam Cầm [Chap 1.1-25.2]",
+              "chapter_name": "25.1",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/65f3f83f8d19104b9c741b9e"
+            },
+            {
+              "filename": "Giam Cầm [Chap 1.1-25.2]",
+              "chapter_name": "25.2",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/65f3f8408d19104b9c741ba1"
+            },
+            {
+              "filename": "Giam Cầm [Chap 26.1-26.2]",
+              "chapter_name": "26.1",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/65fcfbf78d19104b9c7464f7"
+            },
+            {
+              "filename": "Giam Cầm [Chap 26.1-26.2]",
+              "chapter_name": "26.2",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/65fcfbf88d19104b9c7464fc"
+            },
+            {
+              "filename": "Giam Cầm [Chap 27.1-27.2]",
+              "chapter_name": "27.1",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/6604fde1164c256eada8e64d"
+            },
+            {
+              "filename": "Giam Cầm [Chap 27.1-27.2]",
+              "chapter_name": "27.2",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/6604fde2164c256eada8e650"
+            },
+            {
+              "filename": "Giam Cầm [Chap 28.1-28.2]",
+              "chapter_name": "28.1",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/6610ed068d19104b9c750bc1"
+            },
+            {
+              "filename": "Giam Cầm [Chap 28.1-28.2]",
+              "chapter_name": "28.2",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/6610ed078d19104b9c750bc4"
+            },
+            {
+              "filename": "Giam Cầm [Chap 29.1-29.2]",
+              "chapter_name": "29.1",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/6621e7358d19104b9c7588c2"
+            },
+            {
+              "filename": "Giam Cầm [Chap 29.1-29.2]",
+              "chapter_name": "29.2",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/6621e7378d19104b9c7588c5"
+            },
+            {
+              "filename": "Giam Cầm [Chap 30.1-30.2]",
+              "chapter_name": "30.1",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/662c8b06164c256eadaa14a8"
+            },
+            {
+              "filename": "Giam Cầm [Chap 30.1-30.2]",
+              "chapter_name": "30.2",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/662c8b0b164c256eadaa14b0"
+            },
+            {
+              "filename": "Giam Cầm [Chap 31.1-31.2]",
+              "chapter_name": "31.1",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/663ca7214e0322c2e264ad64"
+            },
+            {
+              "filename": "Giam Cầm [Chap 31.1-31.2]",
+              "chapter_name": "31.2",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/663ca7234e0322c2e264ad67"
+            },
+            {
+              "filename": "Giam Cầm [Chap 32-75]",
+              "chapter_name": "32",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/67204db7c926626890a40165"
+            },
+            {
+              "filename": "Giam Cầm [Chap 32-75]",
+              "chapter_name": "33",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/67204db8c926626890a40168"
+            },
+            {
+              "filename": "Giam Cầm [Chap 32-75]",
+              "chapter_name": "34",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/67204db9c926626890a4016b"
+            },
+            {
+              "filename": "Giam Cầm [Chap 32-75]",
+              "chapter_name": "35",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/67204dbbc926626890a4016e"
+            },
+            {
+              "filename": "Giam Cầm [Chap 32-75]",
+              "chapter_name": "36",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/67204dbcc926626890a40171"
+            },
+            {
+              "filename": "Giam Cầm [Chap 32-75]",
+              "chapter_name": "37",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/67204dbec926626890a40174"
+            },
+            {
+              "filename": "Giam Cầm [Chap 32-75]",
+              "chapter_name": "38",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/67204dc0c926626890a40177"
+            },
+            {
+              "filename": "Giam Cầm [Chap 32-75]",
+              "chapter_name": "39",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/67204dc1c926626890a4017a"
+            },
+            {
+              "filename": "Giam Cầm [Chap 32-75]",
+              "chapter_name": "40",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/67204dc3c926626890a4017d"
+            },
+            {
+              "filename": "Giam Cầm [Chap 32-75]",
+              "chapter_name": "41",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/67204dc4c926626890a40180"
+            },
+            {
+              "filename": "Giam Cầm [Chap 32-75]",
+              "chapter_name": "42",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/67204dc6c926626890a40184"
+            },
+            {
+              "filename": "Giam Cầm [Chap 32-75]",
+              "chapter_name": "43",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/67204dc7c926626890a40187"
+            },
+            {
+              "filename": "Giam Cầm [Chap 32-75]",
+              "chapter_name": "44",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/67204dc8c926626890a4018a"
+            },
+            {
+              "filename": "Giam Cầm [Chap 32-75]",
+              "chapter_name": "45",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/67204dcac926626890a4018d"
+            },
+            {
+              "filename": "Giam Cầm [Chap 32-75]",
+              "chapter_name": "46",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/67204dcbc926626890a40190"
+            },
+            {
+              "filename": "Giam Cầm [Chap 32-75]",
+              "chapter_name": "47",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/67204dccc926626890a40193"
+            },
+            {
+              "filename": "Giam Cầm [Chap 32-75]",
+              "chapter_name": "48",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/67204dcec926626890a40196"
+            },
+            {
+              "filename": "Giam Cầm [Chap 32-75]",
+              "chapter_name": "49",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/67204dd0c926626890a40199"
+            },
+            {
+              "filename": "Giam Cầm [Chap 32-75]",
+              "chapter_name": "50",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/67204dd2c926626890a4019c"
+            },
+            {
+              "filename": "Giam Cầm [Chap 32-75]",
+              "chapter_name": "51",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/67204dd4c926626890a4019f"
+            },
+            {
+              "filename": "Giam Cầm [Chap 32-75]",
+              "chapter_name": "52",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/67204dd6c926626890a401a2"
+            },
+            {
+              "filename": "Giam Cầm [Chap 32-75]",
+              "chapter_name": "53",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/67204dd7c926626890a401a5"
+            },
+            {
+              "filename": "Giam Cầm [Chap 32-75]",
+              "chapter_name": "54",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/67204dd9c926626890a401a8"
+            },
+            {
+              "filename": "Giam Cầm [Chap 32-75]",
+              "chapter_name": "55",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/67204ddbc926626890a401ab"
+            },
+            {
+              "filename": "Giam Cầm [Chap 32-75]",
+              "chapter_name": "56",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/67204dddc926626890a401ae"
+            },
+            {
+              "filename": "Giam Cầm [Chap 32-75]",
+              "chapter_name": "57",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/67204ddfc926626890a401b2"
+            },
+            {
+              "filename": "Giam Cầm [Chap 32-75]",
+              "chapter_name": "58",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/67204de0c926626890a401b5"
+            },
+            {
+              "filename": "Giam Cầm [Chap 32-75]",
+              "chapter_name": "59",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/67204de2c926626890a401b8"
+            },
+            {
+              "filename": "Giam Cầm [Chap 32-75]",
+              "chapter_name": "60",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/67204de3c926626890a401bb"
+            },
+            {
+              "filename": "Giam Cầm [Chap 32-75]",
+              "chapter_name": "61",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/67204de5c926626890a401be"
+            },
+            {
+              "filename": "Giam Cầm [Chap 32-75]",
+              "chapter_name": "62",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/67204de6c926626890a401c1"
+            },
+            {
+              "filename": "Giam Cầm [Chap 32-75]",
+              "chapter_name": "63",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/67204de8c926626890a401c4"
+            },
+            {
+              "filename": "Giam Cầm [Chap 32-75]",
+              "chapter_name": "64",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/67204deac926626890a401c7"
+            },
+            {
+              "filename": "Giam Cầm [Chap 32-75]",
+              "chapter_name": "65",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/67204debc926626890a401ca"
+            },
+            {
+              "filename": "Giam Cầm [Chap 32-75]",
+              "chapter_name": "66",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/67204decc926626890a401cd"
+            },
+            {
+              "filename": "Giam Cầm [Chap 32-75]",
+              "chapter_name": "67",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/67204deec926626890a401d0"
+            },
+            {
+              "filename": "Giam Cầm [Chap 32-75]",
+              "chapter_name": "68",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/67204defc926626890a401d3"
+            },
+            {
+              "filename": "Giam Cầm [Chap 32-75]",
+              "chapter_name": "69",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/67204df1c926626890a401d6"
+            },
+            {
+              "filename": "Giam Cầm [Chap 32-75]",
+              "chapter_name": "70",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/67204df2c926626890a401d9"
+            },
+            {
+              "filename": "Giam Cầm [Chap 32-75]",
+              "chapter_name": "71",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/67204df4c926626890a401dc"
+            },
+            {
+              "filename": "Giam Cầm [Chap 32-75]",
+              "chapter_name": "72",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/67204df6c926626890a401df"
+            },
+            {
+              "filename": "Giam Cầm [Chap 32-75]",
+              "chapter_name": "73",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/67204df8c926626890a401e2"
+            },
+            {
+              "filename": "Giam Cầm [Chap 32-75]",
+              "chapter_name": "74",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/67204dfac926626890a401e6"
+            },
+            {
+              "filename": "Giam Cầm [Chap 32-75]",
+              "chapter_name": "75",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/67204dfbc926626890a401e9"
+            },
+            {
+              "filename": "Giam Cầm [Chap 76-77]",
+              "chapter_name": "76",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/672d824cc705a578a7f867fb"
+            },
+            {
+              "filename": "Giam Cầm [Chap 76-77]",
+              "chapter_name": "77",
+              "chapter_title": "",
+              "chapter_api_data": "https://sv1.otruyencdn.com/v1/api/chapter/672d824dc705a578a7f867fe"
+            }
+          ]
+        }
+      ],
+      "updatedAt": "2024-11-08T03:38:46.466Z"
+    },
+    "APP_DOMAIN_CDN_IMAGE": "https://img.otruyenapi.com"
+  }
+}
+```
+
+---
+
+## ✅ 4. Chapter data – `chapter_api_data`
+
+**Endpoint**:
+Gọi link từ `chapter_api_data`, ví dụ:
+`https://sv1.otruyencdn.com/v1/api/chapter/66xxxxx`
+
+**Response:**
+
+```json
+{
+  "status": "success",
+  "message": "",
+  "data": {
+    "domain_cdn": "https://sv1.otruyencdn.com",
+    "item": {
+      "_id": "65f3f8148d19104b9c741b00",
+      "comic_name": "Giam Cầm [Chap 1.1-25.2]",
+      "chapter_name": "1.1",
+      "chapter_title": "",
+      "chapter_path": "uploads/20240315/0d79dbbf5e211dd282bd9f0999bb34d4/chapter_1.1",
+      "chapter_image": [
+        {
+          "image_page": 1,
+          "image_file": "page_1.jpg"
+        },
+        {
+          "image_page": 2,
+          "image_file": "page_2.jpg"
+        },
+        {
+          "image_page": 3,
+          "image_file": "page_3.jpg"
+        },
+        {
+          "image_page": 4,
+          "image_file": "page_4.jpg"
+        },
+        {
+          "image_page": 5,
+          "image_file": "page_5.jpg"
+        },
+        {
+          "image_page": 6,
+          "image_file": "page_6.jpg"
+        },
+        {
+          "image_page": 7,
+          "image_file": "page_7.jpg"
+        },
+        {
+          "image_page": 8,
+          "image_file": "page_8.jpg"
+        },
+        {
+          "image_page": 9,
+          "image_file": "page_9.jpg"
+        },
+        {
+          "image_page": 10,
+          "image_file": "page_10.jpg"
+        },
+        {
+          "image_page": 11,
+          "image_file": "page_11.jpg"
+        },
+        {
+          "image_page": 12,
+          "image_file": "page_12.jpg"
+        },
+        {
+          "image_page": 13,
+          "image_file": "page_13.jpg"
+        },
+        {
+          "image_page": 14,
+          "image_file": "page_14.jpg"
+        },
+        {
+          "image_page": 15,
+          "image_file": "page_15.jpg"
+        },
+        {
+          "image_page": 16,
+          "image_file": "page_16.jpg"
+        },
+        {
+          "image_page": 17,
+          "image_file": "page_17.jpg"
+        },
+        {
+          "image_page": 18,
+          "image_file": "page_18.jpg"
+        }
+      ]
+    }
+  }
+}
+```
+
+> 🔥 **Để hiển thị ảnh chapter** bạn sẽ dùng:
+
+```plaintext
+https://sv1.otruyencdn.com/{chapter_path}/{image_file}
+```
+> 🔥 **Để hiển thị ảnh thumbnail** bạn sẽ dùng:
+```plaintext
+https://img.otruyenapi.com/uploads/comics/{thumb_url}
+```
+
+---
+
+## 📌 Tổng kết các trường quan trọng
+
+| Tên Trường         | Vị trí          | Ý nghĩa                           |
+| ------------------ | --------------- | --------------------------------- |
+| `_id`              | Manga, Chapter  | ID gốc (Mongo style)              |
+| `thumb_url`        | Manga           | Tên file ảnh thumbnail            |
+| `slug`             | Manga, Category | Định danh URL                     |
+| `chapter_api_data` | Chapter         | Link để truy xuất chi tiết chương |
+| `chapter_path`     | Chapter detail  | Đường dẫn ảnh gốc chapter         |
+| `image_file`       | Chapter detail  | Tên ảnh cụ thể trong chapter      |
+| `domain_cdn`       | Chapter detail  | Domain CDN host ảnh               |
+
+---

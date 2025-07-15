@@ -1,0 +1,186 @@
+Dưới đây là **PRD Crawler Controller chính thức**, đã cập nhật đầy đủ các yêu cầu từ bạn:
+
+---
+
+# 📄 PRD – Crawler Controller cho Otruyen API (.NET)
+
+## 1. 🎯 Mục tiêu
+
+Xây dựng một **controller duy nhất** để crawl dữ liệu từ API `https://otruyenapi.com` và lưu trữ vào hệ thống database `.NET`. Crawler cần:
+
+* Hỗ trợ cấu hình phạm vi crawl (từ page A đến page B)
+* Crawl các thực thể: **Category**, **Manga**, **Chapter**, **ChapterImage**
+* **Lưu log chi tiết theo từng slug**
+* Hỗ trợ **crawl lại không bị trùng dữ liệu**
+* Ghi nhận **số chương crawl thành công / thất bại**
+
+---
+
+## 2. 🚦 Quy trình crawl
+
+### Bước 1: Crawl thể loại
+
+* Endpoint: `https://otruyenapi.com/v1/api/the-loai`
+* Lưu vào bảng `Category` nếu chưa tồn tại (`slug` là khóa chính)
+
+### Bước 2: Crawl danh sách truyện mới theo trang
+
+* Endpoint: `https://otruyenapi.com/v1/api/danh-sach/truyen-moi?page={page}`
+* Gọi song song theo cấu hình `pageStart → pageEnd`
+* Trích `slug` từ từng truyện
+* Không lưu DB ở bước này
+
+### Bước 3: Crawl thông tin truyện theo `slug`
+
+* Endpoint: `https://otruyenapi.com/v1/api/truyen-tranh/{slug}`
+* Thực hiện:
+
+  * Lưu hoặc cập nhật `Manga` theo `slug`
+  * Gán `Category` (nhiều-nhiều)
+  * Lưu danh sách `Chapter`
+  * Mỗi `Chapter` có `chapter_api_data`
+
+### Bước 4: Crawl ảnh từng chương
+
+* Gọi tiếp `chapter_api_data` để lấy:
+
+  * Danh sách `chapter_image`
+* Lưu từng ảnh vào bảng `ChapterImage` theo `chapter_id` + `page`
+
+---
+
+## 3. 🧩 Yêu cầu logic lưu trữ (Idempotency)
+
+| Dữ liệu        | Kiểm tra trước khi lưu    | Hành vi khi đã tồn tại            |
+| -------------- | ------------------------- | --------------------------------- |
+| `Category`     | `slug`                    | Không thêm lại                    |
+| `Manga`        | `slug`                    | Cập nhật nếu có khác biệt         |
+| `Chapter`      | `chapter_name + manga_id` | Bỏ qua hoặc cập nhật nếu cho phép |
+| `ChapterImage` | `chapter_id + image_page` | Không lưu lại nếu đã có           |
+
+---
+
+## 4. 📊 Log theo từng truyện – `CrawlLog`
+
+### Entity: `CrawlLog`
+
+```csharp
+public class CrawlLog
+{
+    public Guid Id { get; set; }
+    public string MangaSlug { get; set; }
+    public string MangaName { get; set; }
+    public int TotalChapters { get; set; }
+    public int ChaptersCrawledSuccess { get; set; }
+    public int ChaptersCrawledFailed { get; set; }
+    public DateTime CrawledAt { get; set; }
+    public List<ChapterLog> FailedChapters { get; set; }
+}
+```
+
+### Entity: `ChapterLog`
+
+```csharp
+public class ChapterLog
+{
+    public Guid Id { get; set; }
+    public string ChapterName { get; set; }
+    public string ChapterApiData { get; set; }
+    public string? ErrorMessage { get; set; }
+}
+```
+
+---
+
+## 5. 🧠 Controller API
+
+### Controller: `CrawlerController`
+
+```csharp
+[ApiController]
+[Route("api/crawler")]
+public class CrawlerController : ControllerBase
+{
+    private readonly ICrawlerService _crawlerService;
+
+    [HttpPost("run")]
+    public async Task<IActionResult> RunCrawler([FromBody] CrawlRequest request)
+    {
+        await _crawlerService.CrawlAllAsync(request);
+        return Ok(new { message = "Crawl started. Monitor logs for progress." });
+    }
+}
+```
+
+### DTO: `CrawlRequest`
+
+```csharp
+public class CrawlRequest
+{
+    public int PageStart { get; set; } = 1;
+    public int PageEnd { get; set; } = 5;
+    public bool AllowOverwriteChapters { get; set; } = false;
+    public bool EnableLogging { get; set; } = true;
+    public bool ReCrawlFailedChapters { get; set; } = true;
+}
+```
+
+---
+
+## 6. ⚙️ Service logic chính
+
+```csharp
+public async Task CrawlAllAsync(CrawlRequest request)
+{
+    await CrawlCategoriesAsync();
+
+    var slugs = await CrawlSlugsFromPagesAsync(request.PageStart, request.PageEnd);
+
+    var mangaDetails = await CrawlMangasBySlugsAsync(slugs, request);
+
+    await CrawlAllChapterImagesAsync(mangaDetails, request);
+}
+```
+
+---
+
+## 7. 🧪 Ví dụ kết quả log
+
+```json
+{
+  "mangaSlug": "bon-thanh-nu-nga-bai-roi",
+  "mangaName": "Bổn Thánh Nữ Ngã Bài Rồi",
+  "totalChapters": 46,
+  "chaptersCrawledSuccess": 45,
+  "chaptersCrawledFailed": 1,
+  "crawledAt": "2025-07-14T12:35:00Z",
+  "failedChapters": [
+    {
+      "chapterName": "19",
+      "chapterApiData": "https://sv1.otruyencdn.com/v1/api/chapter/xxx",
+      "errorMessage": "Timeout after 3 retries"
+    }
+  ]
+}
+```
+
+---
+
+## 8. 🔒 Xử lý lỗi & Retry
+
+* Gọi API có retry logic (Polly hoặc custom retry handler)
+* Ghi lại lỗi vào `ChapterLog`
+* Cho phép `ReCrawlFailedChapters = true` để tự động retry
+
+---
+
+## 9. 🚀 Mở rộng tương lai
+
+| Tính năng          | Mô tả                                      |
+| ------------------ | ------------------------------------------ |
+| Lọc theo updatedAt | Chỉ crawl truyện mới hoặc mới cập nhật     |
+| Dashboard          | Thống kê trạng thái crawl theo ngày / slug |
+| Lưu log ra file    | JSON log cho từng slug để debug offline    |
+| Giao diện UI       | Giao diện nhập config và xem kết quả crawl |
+
+---

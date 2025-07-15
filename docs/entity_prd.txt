@@ -1,0 +1,129 @@
+---
+
+# 📄 PRD – Hệ thống quản lý dữ liệu truyện tranh
+
+## 1. Mục tiêu
+
+Xây dựng hệ thống backend bằng .NET để:
+
+* Lưu trữ và quản lý thông tin truyện tranh từ API `https://otruyenapi.com`
+* Phục vụ cho mục đích hiển thị, tìm kiếm, phân loại, và truy xuất chapter
+
+## 2. Các chức năng chính
+
+### 2.1 Truyện tranh (Manga)
+
+* Lưu trữ thông tin cơ bản về truyện: tên, mô tả, ảnh, thể loại, chapter mới nhất.
+
+### 2.2 Chapter
+
+* Lưu thông tin chapter theo truyện.
+* Truy xuất ảnh của từng chapter.
+
+### 2.3 Hình ảnh trong chapter
+
+* Từng ảnh của chapter được đánh số và lưu link.
+
+### 2.4 Thể loại
+
+* Quản lý danh sách các thể loại truyện.
+* Liên kết nhiều-nhiều với Manga.
+
+---
+
+## 3. Entity Model (C# – .NET)
+
+```csharp
+public class Manga
+{
+    public Guid Id { get; set; }
+    public string Name { get; set; }
+    public string Slug { get; set; }
+    public List<string>? OriginNames { get; set; }
+    public string? Description { get; set; }
+    public string? Content { get; set; }
+    public string Status { get; set; } // ongoing, completed, etc.
+    public string ThumbUrl { get; set; }
+    public bool SubDocQuyen { get; set; }
+    public List<string>? Authors { get; set; }
+    public DateTime UpdatedAt { get; set; }
+
+    // Navigation properties
+    public ICollection<Category> Categories { get; set; }
+    public ICollection<Chapter> Chapters { get; set; }
+    public ICollection<Chapter> ChaptersLatest { get; set; }
+    public SeoMeta? Seo { get; set; }
+}
+```
+
+```csharp
+public class Chapter
+{
+    public Guid Id { get; set; }
+    public Guid MangaId { get; set; }
+    public string Filename { get; set; }
+    public string ChapterName { get; set; }
+    public string? ChapterTitle { get; set; }
+    public string ChapterApiData { get; set; }
+
+    // Navigation
+    public Manga Manga { get; set; }
+    public ICollection<ChapterImage> Images { get; set; }
+}
+```
+
+```csharp
+public class ChapterImage
+{
+    public Guid Id { get; set; }
+    public Guid ChapterId { get; set; }
+
+    public int Page { get; set; }
+
+    // Tên file ảnh, ví dụ: "page_1.jpg"
+    public string ImageFile { get; set; }
+
+    // Đường dẫn chapter tương đối, ví dụ: "uploads/20231226/xxx/chapter_1"
+    public string ChapterPath { get; set; }
+
+    public Chapter Chapter { get; set; }
+}
+```
+
+```csharp
+public class Category
+{
+    public Guid Id { get; set; }
+    public string Slug { get; set; }
+    public string Name { get; set; }
+
+    // Navigation
+    public ICollection<Manga> Mangas { get; set; }
+}
+```
+
+```csharp
+public class SeoMeta
+{
+    public Guid Id { get; set; }
+    public string TitleHead { get; set; }
+    public string DescriptionHead { get; set; }
+    public string OgType { get; set; }
+    public List<string> OgImage { get; set; }
+    public string? OgUrl { get; set; }
+    public long? UpdatedTime { get; set; }
+}
+```
+
+---
+
+## 4. Mối quan hệ
+
+| Entity A | Entity B     | Quan hệ       |
+| -------- | ------------ | ------------- |
+| Manga    | Category     | Nhiều - nhiều |
+| Manga    | Chapter      | Một - nhiều   |
+| Chapter  | ChapterImage | Một - nhiều   |
+| Manga    | SeoMeta      | Một - một     |
+
+---

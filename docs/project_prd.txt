@@ -1,0 +1,111 @@
+# 📄 PRD – Cấu hình Project .NET WebAPI (Final)
+
+---
+
+## ✅ 1. Mục tiêu
+
+Thiết lập một project .NET WebAPI với:
+
+* Kiến trúc chuẩn **Clean Architecture**
+* Tách biệt tầng: `Domain`, `Application`, `Infrastructure`, `WebAPI`
+* Hỗ trợ **CQRS** thông qua **MediatR**
+* Ghi log bằng **Serilog**
+* Tích hợp **Swagger**
+* **CORS AllowAll** khi chạy trong môi trường Development
+* Tất cả cấu hình đọc từ file `.appsettings.json`, không hardcode thông tin
+
+---
+
+## 🧱 2. Cấu trúc thư mục
+
+```
+MyApp/
+├── src/
+│   ├── MyApp.Domain/          # Entity, Enum, Interface
+│   ├── MyApp.Application/     # Command/Query + Handler (CQRS)
+│   ├── MyApp.Infrastructure/  # DB, external service, logging
+│   ├── MyApp.WebAPI/          # Controller, Program.cs
+```
+
+---
+
+## ⚙️ 3. Công nghệ
+
+| Mục           | Công nghệ                                                                           |
+| ------------- | ----------------------------------------------------------------------------------- |
+| Framework     | .NET 8                                                                              |
+| Entity Framework     | .NET 8                                                                              |
+| Database      | postgres                                                                            |
+| CQRS          | [MediatR](https://github.com/jbogard/MediatR)                                       |
+| Logging       | [Serilog](https://serilog.net/)                                                     |
+| Swagger       | [Swashbuckle.AspNetCore](https://github.com/domaindrivendev/Swashbuckle.AspNetCore) |
+| CORS Dev Only | `AllowAnyOrigin()`                                                                  |
+
+---
+
+## 📂 4. File `.appsettings.json` – cấu hình đầy đủ
+
+``` cấu hình appsettings.json
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Host=194.233.80.2;Port=5432;Database=dmtt-database;Username=postgres;Password=Nguhachi@2025;"
+  },
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "AllowedHosts": "*",
+  //otruyenapi
+  "OtruyenApi": {
+    "BaseUrl": "https://otruyenapi.com/v1/api"
+  },
+  //cdn
+  "Cdn": {
+    "ThumbnailBaseUrl": "https://img.otruyenapi.com/uploads/comics/",
+    "ChapterCdnBaseUrl": "https://sv1.otruyencdn.com"
+  }
+}
+```
+---
+
+## 🧪 5. Swagger
+
+```csharp
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new() { Title = "MyApp API", Version = "v1" });
+});
+```
+
+---
+
+## ✅ 9. Checklist cuối
+
+| Hạng mục                     | Trạng thái |
+| ---------------------------- | ---------- |
+| Clean Architecture           | ✅          |
+| CQRS + MediatR               | ✅          |
+| Serilog Logging              | ✅          |
+| Swagger                      | ✅          |
+| CORS AllowAll (Development)  | ✅          |
+| API/CDN config riêng biệt    | ✅          |
+| Không hardcode bất kỳ config | ✅          |
+
+---
+
+## 🎁 Gợi ý mở rộng
+
+| Tính năng               | Gợi ý                                                        |
+| ----------------------- | ------------------------------------------------------------ |
+| Docker + Docker Compose | Tạo file `docker-compose.override.yml`                       |
+| Healthcheck endpoint    | Thêm `/health`                                               |
+| Environment switching   | `appsettings.{env}.json` và `appsettings.{env}.local.json`  |
+| Logging                 | Ghi log ra file hoặc ELK                                    |
+| Tracing                 | Tích hợp Jaeger hoặc Zipkin                                |
+| Caching                 | Tích hợp Redis hoặc Memcached                              |
+| Throttling              | Tích hợp Polly hoặc RateLimit                              |
+| Environment switching   | `appsettings.{env}.json`                   |
+
+---
