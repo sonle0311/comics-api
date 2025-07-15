@@ -368,10 +368,10 @@ FodyWeavers.xsd
 *.env.development
 *.env.production
 Logs/
-.trae/
 
 # Exclude appsettings files with sensitive data
 appsettings.Production.json
 appsettings.Staging.json
+appsettings.Development.json
 # Keep Development settings tracked for team consistency
 # appsettings.Development.json
