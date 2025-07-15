@@ -368,4 +368,3 @@ FodyWeavers.xsd
 *.env.development
 *.env.production
 Logs/
-.trae/
