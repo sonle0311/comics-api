@@ -15,11 +15,11 @@ namespace ComicsApi.Application.Mappings
             this.AllowNullCollections = true;
             this.AllowNullDestinationValues = true;
             
-            // Manga mapping - ignore circular references
+            // Manga mapping - map Categories but ignore Chapters to avoid circular references
             CreateMap<Manga, MangaDto>()
-                .ForMember(dest => dest.Categories, opt => opt.Ignore())
+                .ForMember(dest => dest.Categories, opt => opt.MapFrom(src => src.Categories))
                 .ForMember(dest => dest.Chapters, opt => opt.Ignore())
-                .MaxDepth(1);
+                .MaxDepth(2);
             CreateMap<MangaDto, Manga>()
                 .ForMember(dest => dest.Categories, opt => opt.Ignore())
                 .ForMember(dest => dest.Chapters, opt => opt.Ignore())
