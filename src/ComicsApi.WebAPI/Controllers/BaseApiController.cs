@@ -2,6 +2,7 @@ using ComicsApi.Application.Common;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
+using System.Collections.Generic;
 
 namespace ComicsApi.WebAPI.Controllers
 {
@@ -43,7 +44,7 @@ namespace ComicsApi.WebAPI.Controllers
         /// </summary>
         protected OkObjectResult SuccessResponse<T>(T data, PaginationInfo paginationInfo, string message = "Thành công")
         {
-            var response = ApiResponse<T>.SuccessResult(data, message, paginationInfo);
+            var response = ApiResponse<T>.SuccessResult(data, paginationInfo, message);
             return Ok(response);
         }
 
@@ -52,7 +53,8 @@ namespace ComicsApi.WebAPI.Controllers
         /// </summary>
         protected BadRequestObjectResult BadRequestResponse(string message, params string[] errors)
         {
-            var response = ApiResponse<object>.ErrorResult(message, errors);
+            var errorList = errors?.Length > 0 ? new List<string>(errors) : null;
+            var response = ApiResponse<object>.ErrorResult(message, errorList);
             return BadRequest(response);
         }
 
@@ -68,9 +70,11 @@ namespace ComicsApi.WebAPI.Controllers
         /// <summary>
         /// Tạo response lỗi Internal Server Error
         /// </summary>
-        protected ObjectResult InternalServerErrorResponse(string message, string errorDetail = null)
+        protected ObjectResult InternalServerErrorResponse(string message, string? errorDetail = null)
         {
-            var response = ApiResponse<object>.ErrorResult(message, errorDetail);
+            var response = string.IsNullOrEmpty(errorDetail) 
+                ? ApiResponse<object>.ErrorResult(message)
+                : ApiResponse<object>.ErrorResult(message, errorDetail);
             return StatusCode(500, response);
         }
     }
