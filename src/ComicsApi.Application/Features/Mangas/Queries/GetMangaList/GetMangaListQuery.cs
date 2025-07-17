@@ -1,21 +1,19 @@
-using System.Collections.Generic;
-using MediatR;
+using System.ComponentModel.DataAnnotations;
 using ComicsApi.Application.DTOs;
+using ComicsApi.Domain.Common;
+using MediatR;
 
 namespace ComicsApi.Application.Features.Mangas.Queries.GetMangaList
 {
     /// <summary>
     /// Query để lấy danh sách manga theo trang
     /// </summary>
-    public class GetMangaListQuery : IRequest<IEnumerable<MangaDto>>
+    public class GetMangaListQuery : IRequest<PagedResult<MangaDto>>
     {
-        public int Page { get; set; }
-        public int PageSize { get; set; }
-        
-        public GetMangaListQuery(int page = 1, int pageSize = 20)
-        {
-            Page = page;
-            PageSize = pageSize;
-        }
+        [Range(1, int.MaxValue)]
+        public int Page { get; set; } = 1;
+
+        [Range(1, 100)]
+        public int PageSize { get; set; } = 20;
     }
 }

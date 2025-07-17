@@ -12,6 +12,9 @@ namespace ComicsApi.Application.DTOs
         public string Slug { get; set; }
         public string Name { get; set; }
         
-        public List<MangaDto> Mangas { get; set; }
+        /// <summary>
+        /// Danh sách manga thuộc category này, sử dụng MangaSummaryDto để tránh circular reference
+        /// </summary>
+        public List<MangaSummaryDto> Mangas { get; set; }
     }
 }

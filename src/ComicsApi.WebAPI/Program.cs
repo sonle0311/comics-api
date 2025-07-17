@@ -1,5 +1,6 @@
 using ComicsApi.Application;
 using ComicsApi.Infrastructure;
+using FluentValidation;
 using Microsoft.OpenApi.Models;
 using Serilog;
 using System.Text.Json.Serialization;
@@ -26,6 +27,9 @@ builder.Services.AddControllers()
 
 // Đăng ký các dịch vụ từ tầng Application
 builder.Services.AddApplication();
+
+// Thêm FluentValidation
+builder.Services.AddValidatorsFromAssembly(typeof(ComicsApi.Application.IAssemblyMarker).Assembly);
 
 // Đăng ký các dịch vụ từ tầng Infrastructure
 builder.Services.AddInfrastructure(builder.Configuration);
@@ -54,6 +58,9 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 var app = builder.Build();
+
+// Sử dụng ErrorHandlerMiddleware
+app.UseMiddleware<ComicsApi.WebAPI.Middlewares.ErrorHandlerMiddleware>();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

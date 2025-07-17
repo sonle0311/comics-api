@@ -1,5 +1,6 @@
 using AutoMapper;
 using ComicsApi.Application.DTOs;
+using ComicsApi.Domain.Common;
 using ComicsApi.Domain.Entities;
 
 namespace ComicsApi.Application.Mappings
@@ -14,24 +15,17 @@ namespace ComicsApi.Application.Mappings
             // Cấu hình để tránh circular reference
             this.AllowNullCollections = true;
             this.AllowNullDestinationValues = true;
-            
-            // Manga mapping - map Categories but ignore Chapters to avoid circular references
-            CreateMap<Manga, MangaDto>()
-                .ForMember(dest => dest.Categories, opt => opt.MapFrom(src => src.Categories))
-                .ForMember(dest => dest.Chapters, opt => opt.Ignore())
-                .MaxDepth(2);
-            CreateMap<MangaDto, Manga>()
-                .ForMember(dest => dest.Categories, opt => opt.Ignore())
-                .ForMember(dest => dest.Chapters, opt => opt.Ignore())
-                .MaxDepth(1);
-            
-            // Category mapping - ignore circular references
-            CreateMap<Category, CategoryDto>()
-                .ForMember(dest => dest.Mangas, opt => opt.Ignore())
-                .MaxDepth(1);
-            CreateMap<CategoryDto, Category>()
-                .ForMember(dest => dest.Mangas, opt => opt.Ignore())
-                .MaxDepth(1);
+
+            // Manga mapping
+            CreateMap<Manga, MangaDto>();
+            CreateMap<MangaDto, Manga>();
+
+            // MangaSummaryDto mapping
+            CreateMap<Manga, MangaSummaryDto>();
+
+            // Category mapping
+            CreateMap<Category, CategoryDto>();
+            CreateMap<CategoryDto, Category>();
             
             // Chapter mapping
             CreateMap<Chapter, ChapterDto>();
@@ -44,6 +38,9 @@ namespace ComicsApi.Application.Mappings
             // SeoMeta mapping
             CreateMap<SeoMeta, SeoMetaDto>();
             CreateMap<SeoMetaDto, SeoMeta>();
+
+            // PagedResult mapping
+            CreateMap(typeof(PagedResult<>), typeof(PagedResult<>));
             
             // CrawlLog mapping
             CreateMap<CrawlLog, CrawlLogDto>();

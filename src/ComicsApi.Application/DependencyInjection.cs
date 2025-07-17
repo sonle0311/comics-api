@@ -18,6 +18,9 @@ namespace ComicsApi.Application
             // Đăng ký MediatR
             services.AddMediatR(Assembly.GetExecutingAssembly());
 
+            // Đăng ký ValidationBehaviour
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(Common.Behaviours.ValidationBehaviour<,>));
+
             // Đăng ký AutoMapper
             services.AddAutoMapper(typeof(MappingProfile));
 

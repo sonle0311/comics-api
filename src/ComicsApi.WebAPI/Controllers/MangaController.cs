@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using ComicsApi.Application.Common;
+using ComicsApi.Domain.Common;
 using ComicsApi.Application.Features.Mangas.Queries.GetMangaList;
 using ComicsApi.Application.Features.Mangas.Queries.GetMangasByCategory;
 using ComicsApi.Application.Features.Chapters.Queries.GetChaptersByMangaId;
@@ -36,7 +37,11 @@ namespace ComicsApi.WebAPI.Controllers
         {
             try
             {
-                var query = new GetMangaListQuery(page, pageSize);
+                var query = new GetMangaListQuery
+                {
+                    Page = page,
+                    PageSize = pageSize
+                };
                 var result = await _mediator.Send(query);
                 
                 // TODO: Cần cập nhật GetMangaListQuery để trả về thông tin phân trang
@@ -64,7 +69,12 @@ namespace ComicsApi.WebAPI.Controllers
         {
             try
             {
-                var query = new GetMangasByCategoryQuery(categorySlug, page, pageSize);
+                var query = new GetMangasByCategoryQuery
+                {
+                    CategorySlug = categorySlug,
+                    Page = page,
+                    PageSize = pageSize
+                };
                 var result = await _mediator.Send(query);
                 
                 // TODO: Cần cập nhật GetMangasByCategoryQuery để trả về thông tin phân trang

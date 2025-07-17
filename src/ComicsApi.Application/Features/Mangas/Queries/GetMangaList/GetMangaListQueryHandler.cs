@@ -1,8 +1,8 @@
-using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
 using ComicsApi.Application.DTOs;
+using ComicsApi.Domain.Common;
 using ComicsApi.Domain.Interfaces;
 using MediatR;
 
@@ -11,7 +11,7 @@ namespace ComicsApi.Application.Features.Mangas.Queries.GetMangaList
     /// <summary>
     /// Handler xử lý query lấy danh sách manga theo trang
     /// </summary>
-    public class GetMangaListQueryHandler : IRequestHandler<GetMangaListQuery, IEnumerable<MangaDto>>
+    public class GetMangaListQueryHandler : IRequestHandler<GetMangaListQuery, PagedResult<MangaDto>>
     {
         private readonly IMangaRepository _mangaRepository;
         private readonly IMapper _mapper;
@@ -22,10 +22,10 @@ namespace ComicsApi.Application.Features.Mangas.Queries.GetMangaList
             _mapper = mapper;
         }
 
-        public async Task<IEnumerable<MangaDto>> Handle(GetMangaListQuery request, CancellationToken cancellationToken)
+        public async Task<PagedResult<MangaDto>> Handle(GetMangaListQuery request, CancellationToken cancellationToken)
         {
-            var mangas = await _mangaRepository.GetByPageAsync(request.Page, request.PageSize);
-            return _mapper.Map<IEnumerable<MangaDto>>(mangas);
+            var pagedResult = await _mangaRepository.GetByPageAsync(request.Page, request.PageSize);
+            return _mapper.Map<PagedResult<MangaDto>>(pagedResult);
         }
     }
 }
